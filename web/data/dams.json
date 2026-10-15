@@ -4,10 +4,34 @@
   "as_of": "2026-10-12",
   "total_pct": 63.5,
   "total_hm3": 925.5,
-  "note": "SADM publica los niveles en HTML, sin API. El total es captura manual; el dato por presa sigue pendiente.",
+  "note": "SADM publica los niveles en HTML, sin API. Los volúmenes por presa y el total son captura manual de la página del 12 oct 2026 (Dirección de Operaciones). Ojo: las tres capacidades NAMO suman 1,453.0 Mm³, pero SADM reporta 1,458.1 Mm³ como total; el 63.5 % usa el total de SADM.",
   "dams": [
-    { "name": "Presa Cerro Prieto", "lat": 24.9297, "lng": -99.4041, "pct": null, "hm3": null, "verify_coords": true },
-    { "name": "Presa La Boca", "lat": 25.4300, "lng": -100.1280, "pct": null, "hm3": null, "verify_coords": true },
-    { "name": "Presa El Cuchillo", "lat": 25.7300, "lng": -99.3000, "pct": null, "hm3": null, "verify_coords": true }
+    {
+      "name": "Presa Cerro Prieto",
+      "lat": 24.9297,
+      "lng": -99.4041,
+      "pct": 82.9,
+      "hm3": 244.474,
+      "verify_coords": true,
+      "capacidad_namo_hm3": 295.0
+    },
+    {
+      "name": "Presa La Boca",
+      "lat": 25.43,
+      "lng": -100.128,
+      "pct": 97.9,
+      "hm3": 34.249,
+      "verify_coords": true,
+      "capacidad_namo_hm3": 35.0
+    },
+    {
+      "name": "Presa El Cuchillo",
+      "lat": 25.73,
+      "lng": -99.3,
+      "pct": 57.6,
+      "hm3": 646.816,
+      "verify_coords": true,
+      "capacidad_namo_hm3": 1123.0
+    }
   ]
 }
