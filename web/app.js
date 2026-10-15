@@ -14,6 +14,30 @@ const ATTRS = [
   ['basin', 'Cuenca', ''], ['score', 'Índice', ''],
 ];
 
+// Obras que puede devolver el recomendador (mismas claves que `work` en recommendations.json).
+const OBRAS_UI = {
+  'barreras de piedra acomodada':        { corto: 'piedra',     icono: '🧱' },
+  'barreras de material vegetal muerto': { corto: 'vegetal',    icono: '🌿' },
+  'zanjas trinchera':                    { corto: 'zanjas',     icono: '⛏️' },
+  'reforestación con especies nativas':  { corto: 'reforestar', icono: '🌲' },
+  'conservar y monitorear':              { corto: 'conservar',  icono: '👁️' },
+};
+
+// Etiquetas cualitativas y explicación de cada atributo. Los cortes deben mantenerse
+// sincronizados con REGLAS en server/recomendador.py, para que la ficha no contradiga la obra.
+const ATTR_INFO = {
+  ndvi: { tip: 'NDVI: vigor de la vegetación. Más bajo = suelo más expuesto.',
+    label: v => v < 0.35 ? 'cobertura muy baja' : v < 0.50 ? 'cobertura parcial' : 'cobertura conservada' },
+  slope_pct: { tip: 'Pendiente del terreno. Más alta = el agua corre más rápido y se infiltra menos.',
+    label: v => v < 20 ? 'suave' : v < 25 ? 'moderada' : v < 45 ? 'fuerte' : 'muy fuerte' },
+  sand_pct: { tip: 'Arena en el suelo. Más arena = el agua se infiltra más fácil.',
+    label: v => v >= 40 ? 'relativamente arenoso' : 'arena media' },
+  burned_years: { tip: 'Años con incendio detectado. Un incendio deja el suelo sin cobertura.',
+    label: v => v >= 1 ? 'con incendio' : 'sin incendio detectado' },
+  elev_m: { tip: 'Elevación sobre el nivel del mar.' },
+  score: { tip: 'Índice de prioridad de infiltración. Más alto = más prioritaria.' },
+};
+
 const DISTRICTS_URL = 'data/districts.geojson';  // capa de contexto (Pronatura), carga perezosa
 const DAMS_URL = 'data/dams.json';               // niveles de SADM (opcional)
 
@@ -21,7 +45,7 @@ const LIST_LIMIT = 25;
 const MARKER_MAX_ZONES = 150; // con más zonas, los marcadores solo salen a zoom >= MARKER_MIN_ZOOM
 const MARKER_MIN_ZOOM = 11;
 
-const state = { zones: [], layers: {}, markers: {}, recos: {}, cache: {}, selected: null, visible: new Set(['alta', 'media', 'baja']),
+const state = { zones: [], layers: {}, markers: {}, recos: {}, cache: {}, selected: null, obra: 'todas', ranges: {}, visible: new Set(['alta', 'media', 'baja']),
   dams: null, districts: null };
 const panel = document.getElementById('panel');
 let map, zoneGroup, markerGroup;
@@ -164,7 +188,10 @@ function addZones() {
 }
 
 function isVisible(p) {
-  return state.visible.has(p.priority) || !priorityOf(p);
+  if (!(state.visible.has(p.priority) || !priorityOf(p))) return false;
+  if (state.obra === 'todas') return true;
+  const r = recoFor(p.id);
+  return !!r && r.work === state.obra;
 }
 
 function markersAllowed() {
@@ -194,6 +221,13 @@ function refreshVisibility() {
   if (!state.selected) renderList(); else renderNav();
 }
 
+function setupWorkFilter() {
+  const sel = document.getElementById('filter-work');
+  if (!sel) return;
+  Object.entries(OBRAS_UI).forEach(([work, u]) => sel.add(new Option(`${u.icono} ${u.corto}`, work)));
+  sel.addEventListener('change', () => { state.obra = sel.value; refreshVisibility(); });
+}
+
 function setupFilters() {
   document.querySelectorAll('#filters input').forEach(inp => inp.addEventListener('change', () => {
     if (inp.checked) state.visible.add(inp.value); else state.visible.delete(inp.value);
@@ -206,6 +240,16 @@ function setupFilters() {
 function zonasOrdenadas(todas) {
   const props = state.zones.map(f => f.properties);
   return (todas ? props : props.filter(isVisible)).sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+}
+
+function chipObra(id) {
+  const r = recoFor(id);
+  if (!r) return '<span class="chip na">sin ficha</span>';
+  const u = OBRAS_UI[r.work];
+  const baja = /por defecto/i.test(r.caveats || '') ? ' <span class="lowconf" title="Recomendación por defecto: pocas señales en los datos.">baja confianza</span>' : '';
+  const chip = u ? `<span class="chip" title="${esc(r.work)}">${u.icono} ${u.corto}</span>`
+    : `<span class="chip na">${fmt(r.work)}</span>`;
+  return chip + baja;
 }
 
 function skeletonList() {
@@ -222,7 +266,7 @@ function renderList() {
       <span class="id">${esc(p.id)}</span>
       <span class="basin" title="${esc(p.basin ?? '')}">${fmt(p.basin)}</span>
       <span class="score">${scoreText(p)}</span>
-      <span class="pill-row">${badge(p)}</span>
+      <span class="pill-row">${badge(p)} ${chipObra(p.id)}</span>
     </li>`).join('');
   panel.innerHTML = `<h2>Zonas prioritarias</h2><p class="count">Mostrando ${items.length} de ${all.length} zonas</p>` +
     (items.length ? `<ul class="zone-list">${rows}</ul>` : '<p class="empty">Ninguna zona visible con los filtros actuales.</p>');
@@ -317,8 +361,31 @@ function flyTo(layer) {
   else map.flyTo(layer.getLatLng(), 12);
 }
 
+// Rango p2–p98 de TODAS las zonas cargadas, una sola vez tras la carga.
+function computeRanges() {
+  const q = (arr, f) => arr[Math.min(arr.length - 1, Math.max(0, Math.round(f * (arr.length - 1))))];
+  Object.keys(ATTR_INFO).forEach(k => {
+    const vals = state.zones.map(f => f.properties[k]).filter(v => typeof v === 'number').sort((a, b) => a - b);
+    if (vals.length) state.ranges[k] = [q(vals, 0.02), q(vals, 0.98)];
+  });
+}
+
+function attrExtra(k, v) {
+  const info = ATTR_INFO[k];
+  if (!info || typeof v !== 'number' || !state.ranges[k]) return '';
+  const [lo, hi] = state.ranges[k];
+  const pct = hi > lo ? Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100)) : 50;
+  const etiqueta = info.label ? info.label(v) : '';
+  const aria = `${v}${etiqueta ? ', ' + etiqueta : ''}`;
+  return `<span class="bar" role="img" aria-label="${esc(aria)}"><i style="width:${pct.toFixed(0)}%"></i></span>` +
+    (etiqueta ? `<span class="qual">${esc(etiqueta)}</span>` : '');
+}
+
 function renderDetail(p) {
-  const rows = ATTRS.map(([k, label, unit]) => `<dt>${label}</dt><dd>${k === 'score' ? scoreText(p) : fmt(p[k], unit)}</dd>`).join('');
+  const rows = ATTRS.map(([k, label, unit]) => {
+    const tip = ATTR_INFO[k] ? ` title="${esc(ATTR_INFO[k].tip)}"` : '';
+    return `<dt${tip}>${label}</dt><dd${tip}>${k === 'score' ? scoreText(p) : fmt(p[k], unit)}${attrExtra(k, p[k])}</dd>`;
+  }).join('');
   panel.innerHTML = `
     <nav class="zone-nav" id="zone-nav" aria-label="Navegar entre zonas"></nav>
     <h2>Zona ${esc(p.id)} ${badge(p)}</h2>
@@ -508,12 +575,14 @@ async function init() {
   state.dams = await loadJson(DAMS_URL, true);
   addDams();
   setupFilters();
+  setupWorkFilter();
   setupDistricts();
   setupCsv();
   try {
     const [fc, recos] = await Promise.all([loadJson('data/zones.geojson'), loadJson('data/recommendations.json', true)]);
     state.zones = normalize(fc);
     state.recos = recos || {};
+    computeRanges();
     addZones();
     renderList();
     showBanner(fc);

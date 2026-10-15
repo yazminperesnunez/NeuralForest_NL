@@ -127,3 +127,13 @@ body.doc { height:auto; min-height:100%; display:block; background:var(--bg); }
 .zone-list li.sk span { color:transparent; background:var(--line); border-radius:4px; animation:sk 1.2s ease-in-out infinite; }
 .zone-list li.sk .pill-row { background:none; }
 @keyframes sk { 50% { opacity:.5; } }
+
+/* chip de obra y barras de atributos */
+.chip { display:inline-block; padding:2px 8px; border-radius:99px; font-size:.72rem; font-weight:600; background:#e8efe6; color:#24402a; border:1px solid #b9cdb5; white-space:nowrap; }
+.chip.na { background:var(--line); color:var(--muted); border-color:transparent; }
+.lowconf { font-size:.66rem; color:var(--muted); border:1px dashed var(--muted); border-radius:99px; padding:1px 6px; white-space:nowrap; }
+.pill-row { display:flex; flex-wrap:wrap; gap:4px 6px; align-items:center; }
+.attrs .bar { display:block; width:120px; max-width:100%; height:6px; margin:4px 0 0 auto; background:var(--line); border-radius:3px; overflow:hidden; }
+.attrs .bar i { display:block; height:100%; background:#444; }
+.attrs .qual { display:block; font-size:.74rem; font-weight:500; color:var(--muted); }
+#work-filter select { font-size:inherit; max-width:150px; }
