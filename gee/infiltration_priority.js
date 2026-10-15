@@ -251,7 +251,8 @@ summary().evaluate(function (s, err) {
 });
 
 // ---------- DESCARGA ----------
-cells.getDownloadURL('geojson', OUT_PROPS, 'zones', function (url, err) {
+// selectors must stay null: a selectors list drops the geometry in GeoJSON.
+cells.getDownloadURL('geojson', null, 'zones', function (url, err) {
   if (err || !url) {
     print('ERROR al crear el link de descarga: ' + err);
     print('Usa la pestaña Tasks y pulsa Run en la tarea "zones".');
@@ -265,6 +266,5 @@ cells.getDownloadURL('geojson', OUT_PROPS, 'zones', function (url, err) {
 Export.table.toDrive({
   collection: cells,
   description: 'zones',
-  fileFormat: 'GeoJSON',
-  selectors: OUT_PROPS
+  fileFormat: 'GeoJSON'
 });
