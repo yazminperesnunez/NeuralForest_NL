@@ -81,3 +81,36 @@ button:disabled { opacity:.6; cursor:wait; }
   .ctl-group { padding:4px 8px; font-size:.78rem; }
   .attrs dd { overflow-wrap:anywhere; }
 }
+
+/* ---- acciones del encabezado, banner y capa de contexto ---- */
+.actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.btn-link { font-size:.82rem; text-decoration:none; color:var(--accent); border:1px solid var(--line);
+  background:var(--card); border-radius:8px; padding:7px 12px; white-space:nowrap; }
+.btn-link:hover, .btn-link:focus { background:var(--bg); }
+.banner { background:#fff7e0; border-bottom:1px solid #e8d79a; color:#5c4813; padding:7px 16px; font-size:.82rem; }
+.banner b { font-weight:700; }
+.legend i.distrito { background:rgba(27,108,168,.18); border:1px solid #1b6ca8; border-radius:2px; }
+.district-popup { font-size:.82rem; max-height:220px; overflow:auto; }
+.district-popup h4 { margin:0 0 6px; font-size:.9rem; }
+.district-popup table { border-collapse:collapse; }
+.district-popup td { padding:2px 8px 2px 0; vertical-align:top; }
+.district-popup td:first-child { color:var(--muted); white-space:nowrap; }
+.ctl-group .muted { color:var(--muted); font-size:.72rem; display:block; padding:1px 0; }
+
+/* ---- página de metodología (sin JS) ---- */
+body.doc { height:auto; min-height:100%; display:block; background:var(--bg); }
+.prose { max-width:760px; margin:0 auto; padding:20px 16px 40px; line-height:1.55; }
+.prose h2 { font-size:1.05rem; margin:28px 0 8px; }
+.prose h3 { font-size:.9rem; margin:18px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; }
+.prose p, .prose li { font-size:.95rem; }
+.prose code { background:var(--card); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.85em; }
+.prose a { color:var(--accent); }
+.callout { background:var(--card); border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  padding:10px 14px; font-weight:600; }
+.tabla { width:100%; border-collapse:collapse; margin:10px 0; background:var(--card);
+  border:1px solid var(--line); border-radius:8px; overflow:hidden; font-size:.9rem; }
+.tabla th, .tabla td { text-align:left; padding:7px 10px; border-bottom:1px solid var(--line); }
+.tabla th { color:var(--muted); font-weight:600; font-size:.8rem; }
+.tabla tr:last-child td { border-bottom:0; }
+.fuentes { padding-left:18px; }
+.fuentes li { margin-bottom:4px; overflow-wrap:anywhere; }

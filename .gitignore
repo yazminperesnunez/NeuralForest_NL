@@ -9,3 +9,6 @@ node_modules/
 # Material del reto (no es nuestro) y trabajo de otros retos
 docs/*.pdf
 aire-zmm/
+
+# GeoPackages de origen: el derivado vive en web/data/districts.geojson
+*.gpkg

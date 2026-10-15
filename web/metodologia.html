@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metodología · Prioridad de infiltración</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="doc">
+  <header class="top">
+    <div class="titles">
+      <h1>Metodología y fuentes</h1>
+      <p>Reto 1 · Infiltración — Grok Monterrey Build Day, 14 oct 2026</p>
+    </div>
+    <a class="btn-link" href="index.html">Volver al mapa</a>
+  </header>
+
+  <main class="prose">
+    <p class="callout">Índice de potencial relativo. No mide volumen de agua infiltrada.
+      Requiere validación en campo.</p>
+
+    <h2>La pregunta</h2>
+    <p>¿Dónde restaurar suelos en las partes altas para favorecer la infiltración en las cuencas
+      que alimentan las presas de Monterrey? El mapa ordena zonas por potencial relativo: dice
+      dónde vale la pena ir a ver primero, no cuánta agua se va a infiltrar.</p>
+
+    <h2>Unidad de análisis</h2>
+    <p>Celdas de 3 km (<code>CELL_SIZE_M</code>) sobre una cuadrícula en EPSG:32614 (UTM 14N),
+      dentro de tres cuencas dibujadas a mano: Río Santa Catarina → El Cuchillo, Presa La Boca y
+      Presa Cerro Prieto. Solo se consideran las partes altas: elevación ≥ 1000 m
+      (<code>MIN_ELEV</code>). Cada celda es un promedio de insumos más finos (10 a 500 m).</p>
+
+    <h2>Cómo se calcula el índice</h2>
+    <p>Cinco capas, normalizadas de 0 a 1 con los percentiles 2 y 98 de la zona de estudio, y
+      sumadas con estos pesos (se editan en <code>WEIGHTS</code>, arriba de
+      <code>gee/infiltration_priority.js</code>):</p>
+    <table class="tabla">
+      <thead><tr><th>Capa</th><th>Peso</th><th>Cómo entra</th></tr></thead>
+      <tbody>
+        <tr><td>Vegetación (NDVI)</td><td>0.30</td><td>Invertida: menos cobertura, más prioridad</td></tr>
+        <tr><td>Humedad (NDMI)</td><td>0.20</td><td>Invertida: más seco, más prioridad</td></tr>
+        <tr><td>Pendiente</td><td>0.20</td><td>Óptimo en 20 %; la idoneidad cae hacia los extremos</td></tr>
+        <tr><td>Arena del suelo</td><td>0.15</td><td>Directa: más arena, más capacidad de infiltrar</td></tr>
+        <tr><td>Incendios</td><td>0.15</td><td>Años con área quemada (2015–2025), tope en 3</td></tr>
+      </tbody>
+    </table>
+    <p>El NDVI y el NDMI se calculan con la mediana de Sentinel-2 en temporada seca (febrero a mayo),
+      con máscara de nubes por SCL y escenas con menos de 20 % de nubosidad. El resultado por celda
+      es un <strong>score de 0 a 1</strong>; la clase alta / media / baja son los terciles del score
+      dentro de la zona de estudio, no un umbral absoluto.</p>
+
+    <h2>Qué se excluye</h2>
+    <ul>
+      <li>Todo lo que esté debajo de 1000 m de elevación.</li>
+      <li>Celdas fuera de las tres cuencas dibujadas.</li>
+      <li>Celdas sin dato suficiente para calcular el score.</li>
+    </ul>
+
+    <h2>Distritos de riego</h2>
+    <p>La capa de distritos de riego (GeoPackage entregado por Pronatura Noreste) se muestra como
+      <strong>contexto</strong>, no entra en el índice: son los distritos 031 Las Lajas (Nuevo León)
+      y 026 Bajo Río San Juan (Tamaulipas), aguas abajo de las partes altas. Sirven para ver quién
+      usa el agua que no se infiltra arriba. Se convirtieron a WGS84 con
+      <code>scripts/gpkg_a_geojson.py</code>, simplificando a 100 m y conservando los atributos
+      originales (superficie, usuarios, volumen concesionado, año agrícola).</p>
+
+    <h2>Recomendación de obra</h2>
+    <p>Cada zona recibe un tipo de obra. Las reglas (umbrales <strong>provisionales</strong>, a
+      validar con Pronatura; <code>slope_pct</code> está en porcentaje) viven en
+      <code>server/recomendador.py</code>:</p>
+    <table class="tabla">
+      <thead><tr><th>Si…</th><th>Obra</th></tr></thead>
+      <tbody>
+        <tr><td>NDVI ≥ 0.50</td><td>conservar y monitorear</td></tr>
+        <tr><td>2 o más años con incendio y pendiente ≥ 20 %</td><td>barreras de material vegetal muerto</td></tr>
+        <tr><td>Pendiente ≥ 25 % y NDVI &lt; 0.35</td><td>barreras de piedra acomodada</td></tr>
+        <tr><td>Arena ≥ 50 % y pendiente &lt; 20 %</td><td>zanjas trinchera</td></tr>
+        <tr><td>NDVI &lt; 0.35 y pendiente &lt; 20 %</td><td>reforestación con especies nativas</td></tr>
+      </tbody>
+    </table>
+    <p>Si ninguna regla aplica con claridad, decide el modelo (Grok) y lo dice en las salvedades de
+      la ficha. Las recomendaciones se pre-generan con
+      <code>scripts/generar_recomendaciones.py</code> para que el demo no dependa de la red; el
+      botón del panel consulta a Grok en vivo cuando el servidor está arriba.</p>
+
+    <h2>Límites</h2>
+    <ul>
+      <li>El índice compara potencial relativo entre zonas. <strong>No mide el volumen de agua
+        infiltrada</strong>, ni el costo ni la factibilidad de la obra.</li>
+      <li>Los pesos son una primera propuesta: un especialista debe validarlos.</li>
+      <li>MODIS (área quemada) tiene 500 m de resolución y Sentinel-2 tiene 10 m. Una celda de 3 km
+        promedia realidades muy distintas.</li>
+      <li>Los umbrales de tipo de obra son provisionales.</li>
+      <li>Las coordenadas de las presas están por verificar y el nivel por presa de SADM es captura
+        manual.</li>
+      <li>Nada sustituye la visita de campo: tenencia de la tierra, acceso, ganado y disponibilidad
+        de material deciden si una obra es viable.</li>
+    </ul>
+
+    <h2>Fuentes</h2>
+    <h3>Capas del índice (Google Earth Engine)</h3>
+    <ul class="fuentes">
+      <li>Elevación y pendiente · SRTM 30 m — <code>USGS/SRTMGL1_003</code></li>
+      <li>NDVI y NDMI · Sentinel-2 SR armonizado — <code>COPERNICUS/S2_SR_HARMONIZED</code></li>
+      <li>Arena del suelo · OpenLandMap — <code>OpenLandMap/SOL/SOL_SAND-WFRACTION_USDA-3A1A1A_M/v02</code></li>
+      <li>Área quemada · MODIS — <code>MODIS/061/MCD64A1</code></li>
+    </ul>
+    <h3>Capas de contexto</h3>
+    <ul class="fuentes">
+      <li>Distritos de riego · Pronatura Noreste (GeoPackage entregado al equipo)</li>
+      <li>Niveles de las presas · SADM —
+        <a href="https://web.sadm.gob.mx/SADM/index.jsp?id_html=niveles">web.sadm.gob.mx</a></li>
+    </ul>
+    <h3>Contexto del reto</h3>
+    <ul class="fuentes">
+      <li>Declaratoria de emergencia por sequía, Nuevo León (2022) —
+        <a href="https://sistec.nl.gob.mx/Transparencia_2015/Archivos/AC_0001_0007_00170620_000001.pdf">sistec.nl.gob.mx</a></li>
+      <li>Análisis de la crisis de agua, Congreso de Nuevo León (2023) —
+        <a href="https://www.hcnl.gob.mx/glpan/2023/03/analisis-de-la-crisis-de-agua.php">hcnl.gob.mx</a></li>
+    </ul>
+
+    <h2>Pendientes</h2>
+    <ul>
+      <li>Verificar las coordenadas de las tres presas.</li>
+      <li>Capturar el nivel por presa desde SADM (no hay API).</li>
+      <li>Validar con Pronatura los pesos del índice y los umbrales de tipo de obra.</li>
+      <li>Reemplazar <code>web/data/zones.geojson</code> por el export real de GEE.</li>
+    </ul>
+  </main>
+
+  <footer class="note">Ojo: el índice compara potencial relativo; no mide volumen de agua infiltrada.</footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "source": "SADM · Niveles de las presas",
+  "url": "https://web.sadm.gob.mx/SADM/index.jsp?id_html=niveles",
+  "as_of": "2026-10-12",
+  "total_pct": 63.5,
+  "total_hm3": 925.5,
+  "note": "SADM publica los niveles en HTML, sin API. El total es captura manual; el dato por presa sigue pendiente.",
+  "dams": [
+    { "name": "Presa Cerro Prieto", "lat": 24.9297, "lng": -99.4041, "pct": null, "hm3": null, "verify_coords": true },
+    { "name": "Presa La Boca", "lat": 25.4300, "lng": -100.1280, "pct": null, "hm3": null, "verify_coords": true },
+    { "name": "Presa El Cuchillo", "lat": 25.7300, "lng": -99.3000, "pct": null, "hm3": null, "verify_coords": true }
+  ]
+}
