@@ -83,16 +83,29 @@
       <code>scripts/generar_recomendaciones.py</code> para que el demo no dependa de la red; el
       botón del panel consulta a Grok en vivo cuando el servidor está arriba.</p>
 
+    <h2>Sensibilidad a los pesos</h2>
+    <p>Los pesos de <code>WEIGHTS</code> son una propuesta, no un dato. Para ver cuánto cambian los
+      resultados si un especialista elige otros, <code>scripts/robustez_pesos.py</code> sortea miles
+      de juegos de pesos al azar (uniforme sobre los que suman 1, con semilla fija) y cuenta en qué
+      porcentaje de los sorteos cada zona queda en prioridad alta, es decir, en el tercio superior
+      del ranking. Una zona robusta es prioritaria con casi cualquier ponderación; una frágil
+      depende de los pesos elegidos.</p>
+    <p>Solo cubre la incertidumbre de los pesos: no cubre los umbrales (pendiente ideal, tope de
+      incendios), la calidad de los datos ni la resolución de 3 km. El script recalcula los factores
+      con los valores por zona, no con los píxeles, así que reporta su concordancia con el
+      <code>score</code> exportado. El mapa todavía no muestra este resultado.</p>
+
     <h2>Límites</h2>
     <ul>
       <li>El índice compara potencial relativo entre zonas. <strong>No mide el volumen de agua
         infiltrada</strong>, ni el costo ni la factibilidad de la obra.</li>
-      <li>Los pesos son una primera propuesta: un especialista debe validarlos.</li>
+      <li>Los pesos son una primera propuesta: un especialista debe validarlos. La prueba de
+        sensibilidad muestra qué zonas resisten otros pesos.</li>
       <li>MODIS (área quemada) tiene 500 m de resolución y Sentinel-2 tiene 10 m. Una celda de 3 km
         promedia realidades muy distintas.</li>
       <li>Los umbrales de tipo de obra son provisionales.</li>
-      <li>Las coordenadas de las presas están por verificar y el nivel por presa de SADM es captura
-        manual.</li>
+      <li>Las coordenadas de las presas están por verificar. Los niveles por presa son captura manual
+        de SADM al 12 oct 2026 y hay que actualizarlos a mano.</li>
       <li>Nada sustituye la visita de campo: tenencia de la tierra, acceso, ganado y disponibilidad
         de material deciden si una obra es viable.</li>
     </ul>
@@ -122,9 +135,10 @@
     <h2>Pendientes</h2>
     <ul>
       <li>Verificar las coordenadas de las tres presas.</li>
-      <li>Capturar el nivel por presa desde SADM (no hay API).</li>
+      <li>Actualizar a mano los niveles de <code>web/data/dams.json</code> antes del demo (SADM no tiene API).</li>
       <li>Validar con Pronatura los pesos del índice y los umbrales de tipo de obra.</li>
       <li>Reemplazar <code>web/data/zones.geojson</code> por el export real de GEE.</li>
+      <li>Correr <code>scripts/robustez_pesos.py</code> con el export real y revisar las zonas frágiles.</li>
     </ul>
   </main>
 

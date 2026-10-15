@@ -11,7 +11,7 @@ Reto 1 · Infiltración — Grok Monterrey Build Day, 14 oct 2026. Reto propuest
 1. **`gee/`**: un script de Google Earth Engine calcula un índice ponderado con 5 capas: vegetación (NDVI), humedad (NDMI), pendiente, arena del suelo e incendios. Divide la zona en celdas de 3 km, las clasifica en alta, media o baja, y exporta `zones.geojson`.
 2. **`web/`**: una página estática con un mapa Leaflet. Muestra las zonas, filtra por prioridad, lista las 25 zonas con mayor puntaje y muestra el detalle de cada zona.
 3. **`server/`**: el endpoint `POST /api/recommend` manda los datos de una zona a Grok y regresa la obra recomendada. Solo biblioteca estándar de Python, sin dependencias. Si no hay llave de API configurada, responde con una recomendación por reglas en vez de fallar.
-4. **`scripts/`**: pre-generan las recomendaciones de todas las zonas (para que el demo no dependa de la red) y convierten el GeoPackage de distritos de riego de Pronatura a GeoJSON sin necesidad de GDAL ni geopandas.
+4. **`scripts/`**: pre-generan las recomendaciones de todas las zonas (para que el demo no dependa de la red) y convierten el GeoPackage de distritos de riego de Pronatura a GeoJSON sin necesidad de GDAL ni geopandas, y prueban qué tan sensibles son las zonas de prioridad alta a los pesos del índice.
 
 ## Estructura
 
@@ -27,6 +27,7 @@ server/app.py                       Sirve web/ + POST /api/recommend
 server/recomendador.py              Reglas de obra, prompt y cliente del LLM
 scripts/generar_recomendaciones.py  Pre-genera recommendations.json
 scripts/gpkg_a_geojson.py           GeoPackage -> GeoJSON (sin GDAL)
+scripts/robustez_pesos.py           Sensibilidad de los pesos: robustez de cada zona
 pitch/guion.md, pitch/diapositivas.md
 ```
 
@@ -52,6 +53,13 @@ Pre-generar las recomendaciones de todas las zonas (recomendado antes del demo):
 ```bash
 python3 scripts/generar_recomendaciones.py              # con Grok
 python3 scripts/generar_recomendaciones.py --solo-reglas  # sin LLM
+```
+
+Probar qué tan sensibles son las zonas a los pesos (usar con el export real de GEE; con las zonas de muestra solo es ilustrativo):
+
+```bash
+python3 scripts/robustez_pesos.py            # 5,000 sorteos, escribe web/data/robustez.json
+python3 scripts/robustez_pesos.py --n 20000  # más sorteos
 ```
 
 Actualizar la capa de distritos de riego a partir del GeoPackage de Pronatura:
