@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prioridad de infiltración · Sierra Madre Oriental</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="titles">
+      <h1>Prioridad de infiltración · Sierra Madre Oriental</h1>
+      <p>Reto 1 · Infiltración — Grok Monterrey Build Day</p>
+    </div>
+    <ul class="kpis">
+      <li><strong>63.5 %</strong><span>capacidad de las presas principales al 12 oct 2026</span></li>
+      <li><strong>&lt; 5 %</strong><span>Cerro Prieto y La Boca en lo más crítico de 2022</span></li>
+      <li><strong>13,500 vs 16,500 l/s</strong><span>disponible vs consumo regular (2022)</span></li>
+    </ul>
+  </header>
+
+  <main class="layout">
+    <section class="map-wrap">
+      <div id="map" aria-label="Mapa de zonas prioritarias"></div>
+      <div class="map-controls">
+        <div class="ctl-group" id="basemaps">
+          <label><input type="radio" name="base" value="topo" checked> Topográfico</label>
+          <label><input type="radio" name="base" value="sat"> Satélite</label>
+        </div>
+        <div class="ctl-group" id="filters">
+          <label><input type="checkbox" value="alta" checked> Alta</label>
+          <label><input type="checkbox" value="media" checked> Media</label>
+          <label><input type="checkbox" value="baja" checked> Baja</label>
+        </div>
+      </div>
+      <div class="legend">
+        <b>Prioridad</b>
+        <span><i style="background:#d7301f"></i>Alta</span>
+        <span><i style="background:#f0a020"></i>Media</span>
+        <span><i style="background:#f6e58d"></i>Baja</span>
+        <span><i class="dam"></i>Presa</span>
+      </div>
+    </section>
+
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+
+  <footer class="note">Ojo: el índice compara potencial relativo; no mide volumen de agua infiltrada.</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

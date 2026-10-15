@@ -1,0 +1,23 @@
+{
+  "Z01": {
+    "zone_id": "Z01",
+    "work": "barreras de piedra acomodada",
+    "why": "Pendiente moderada (18.5 %) con cobertura vegetal muy baja (NDVI 0.21) y 2 años con incendio: el suelo expuesto genera escurrimiento rápido. Las barreras de piedra en curvas de nivel frenan el agua, retienen sedimento y dan tiempo a que se infiltre.",
+    "alternatives": ["zanjas trinchera", "reforestación con especies nativas"],
+    "caveats": "Requiere piedra disponible en sitio y mantenimiento después de las primeras lluvias fuertes. Sin protección contra ganado, la vegetación no se recupera."
+  },
+  "Z04": {
+    "zone_id": "Z04",
+    "work": "zanjas trinchera",
+    "why": "Pendiente baja (12.8 %), suelo arenoso (58 %) y NDVI muy bajo (0.19). En suelos arenosos con poca pendiente las zanjas trinchera captan el escurrimiento y favorecen la infiltración profunda.",
+    "alternatives": ["exclusión de ganado", "reforestación con especies nativas"],
+    "caveats": "En suelo arenoso las paredes de la zanja pueden colapsar; conviene reforzarlas con vegetación. Validar en campo la profundidad del suelo."
+  },
+  "Z06": {
+    "zone_id": "Z06",
+    "work": "barreras de material vegetal muerto",
+    "why": "Prioridad media con pendiente de 20.1 % y NDVI de 0.41. Hay cobertura parcial, así que una obra ligera con ramas y troncos sirve para frenar el agua sin mover suelo.",
+    "alternatives": ["reforestación con especies nativas"],
+    "caveats": "Las barreras de material vegetal se degradan en pocos años. Deben combinarse con revegetación para dar resultados duraderos."
+  }
+}

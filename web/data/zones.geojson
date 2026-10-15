@@ -1,0 +1,497 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z01",
+    "priority": "alta",
+    "score": 0.82,
+    "slope_pct": 18.5,
+    "ndvi": 0.21,
+    "elev_m": 1850,
+    "burned_years": 2,
+    "sand_pct": 45,
+    "basin": "Río Santa Catarina"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.4305,
+       25.461
+      ],
+      [
+       -100.40950000000001,
+       25.461
+      ],
+      [
+       -100.40950000000001,
+       25.479
+      ],
+      [
+       -100.4305,
+       25.479
+      ],
+      [
+       -100.4305,
+       25.461
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z02",
+    "priority": "alta",
+    "score": 0.78,
+    "slope_pct": 22.0,
+    "ndvi": 0.24,
+    "elev_m": 2100,
+    "burned_years": 3,
+    "sand_pct": 40,
+    "basin": "Río Santa Catarina"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.5105,
+       25.511
+      ],
+      [
+       -100.4895,
+       25.511
+      ],
+      [
+       -100.4895,
+       25.529
+      ],
+      [
+       -100.5105,
+       25.529
+      ],
+      [
+       -100.5105,
+       25.511
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z03",
+    "priority": "alta",
+    "score": 0.74,
+    "slope_pct": 15.2,
+    "ndvi": 0.27,
+    "elev_m": 1650,
+    "burned_years": 1,
+    "sand_pct": 52,
+    "basin": "Río Ramos"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.2105,
+       25.331
+      ],
+      [
+       -100.18950000000001,
+       25.331
+      ],
+      [
+       -100.18950000000001,
+       25.349
+      ],
+      [
+       -100.2105,
+       25.349
+      ],
+      [
+       -100.2105,
+       25.331
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z04",
+    "priority": "alta",
+    "score": 0.71,
+    "slope_pct": 12.8,
+    "ndvi": 0.19,
+    "elev_m": 1900,
+    "burned_years": 2,
+    "sand_pct": 58,
+    "basin": "Río Pablillo"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -99.9605,
+       24.811
+      ],
+      [
+       -99.93950000000001,
+       24.811
+      ],
+      [
+       -99.93950000000001,
+       24.829
+      ],
+      [
+       -99.9605,
+       24.829
+      ],
+      [
+       -99.9605,
+       24.811
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z05",
+    "priority": "media",
+    "score": 0.58,
+    "slope_pct": 28.4,
+    "ndvi": 0.38,
+    "elev_m": 2450,
+    "burned_years": 1,
+    "sand_pct": 35,
+    "basin": "Río Santa Catarina"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.39049999999999,
+       25.531
+      ],
+      [
+       -100.3695,
+       25.531
+      ],
+      [
+       -100.3695,
+       25.549
+      ],
+      [
+       -100.39049999999999,
+       25.549
+      ],
+      [
+       -100.39049999999999,
+       25.531
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z06",
+    "priority": "media",
+    "score": 0.55,
+    "slope_pct": 20.1,
+    "ndvi": 0.41,
+    "elev_m": 1900,
+    "burned_years": 0,
+    "sand_pct": 42,
+    "basin": "Río Ramos"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.17049999999999,
+       25.371
+      ],
+      [
+       -100.1495,
+       25.371
+      ],
+      [
+       -100.1495,
+       25.389
+      ],
+      [
+       -100.17049999999999,
+       25.389
+      ],
+      [
+       -100.17049999999999,
+       25.371
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z07",
+    "priority": "media",
+    "score": 0.52,
+    "slope_pct": 9.5,
+    "ndvi": 0.33,
+    "elev_m": 2050,
+    "burned_years": 1,
+    "sand_pct": 60,
+    "basin": "Río Pablillo"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.06049999999999,
+       24.730999999999998
+      ],
+      [
+       -100.0395,
+       24.730999999999998
+      ],
+      [
+       -100.0395,
+       24.749
+      ],
+      [
+       -100.06049999999999,
+       24.749
+      ],
+      [
+       -100.06049999999999,
+       24.730999999999998
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z08",
+    "priority": "media",
+    "score": 0.49,
+    "slope_pct": 14.0,
+    "ndvi": 0.36,
+    "elev_m": 1250,
+    "burned_years": 0,
+    "sand_pct": 48,
+    "basin": "Río Pesquería"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -99.6305,
+       25.611
+      ],
+      [
+       -99.60950000000001,
+       25.611
+      ],
+      [
+       -99.60950000000001,
+       25.629
+      ],
+      [
+       -99.6305,
+       25.629
+      ],
+      [
+       -99.6305,
+       25.611
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z09",
+    "priority": "baja",
+    "score": 0.31,
+    "slope_pct": 35.5,
+    "ndvi": 0.62,
+    "elev_m": 2900,
+    "burned_years": 0,
+    "sand_pct": 28,
+    "basin": "Río Santa Catarina"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.47049999999999,
+       25.491
+      ],
+      [
+       -100.4495,
+       25.491
+      ],
+      [
+       -100.4495,
+       25.509
+      ],
+      [
+       -100.47049999999999,
+       25.509
+      ],
+      [
+       -100.47049999999999,
+       25.491
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z10",
+    "priority": "baja",
+    "score": 0.27,
+    "slope_pct": 32.0,
+    "ndvi": 0.58,
+    "elev_m": 2600,
+    "burned_years": 0,
+    "sand_pct": 30,
+    "basin": "Río Ramos"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -100.2405,
+       25.301
+      ],
+      [
+       -100.21950000000001,
+       25.301
+      ],
+      [
+       -100.21950000000001,
+       25.319
+      ],
+      [
+       -100.2405,
+       25.319
+      ],
+      [
+       -100.2405,
+       25.301
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z11",
+    "priority": "baja",
+    "score": 0.22,
+    "slope_pct": 6.0,
+    "ndvi": 0.55,
+    "elev_m": 1700,
+    "burned_years": 0,
+    "sand_pct": 44,
+    "basin": "Río Pablillo"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -99.89049999999999,
+       24.871
+      ],
+      [
+       -99.8695,
+       24.871
+      ],
+      [
+       -99.8695,
+       24.889
+      ],
+      [
+       -99.89049999999999,
+       24.889
+      ],
+      [
+       -99.89049999999999,
+       24.871
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "Z12",
+    "priority": "baja",
+    "score": 0.18,
+    "slope_pct": 25.0,
+    "ndvi": 0.51,
+    "elev_m": 1400,
+    "burned_years": 0,
+    "sand_pct": 38,
+    "basin": "Río San Juan"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -99.56049999999999,
+       25.541
+      ],
+      [
+       -99.5395,
+       25.541
+      ],
+      [
+       -99.5395,
+       25.559
+      ],
+      [
+       -99.56049999999999,
+       25.559
+      ],
+      [
+       -99.56049999999999,
+       25.541
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}
