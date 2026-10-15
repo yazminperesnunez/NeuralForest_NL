@@ -6,9 +6,9 @@ Reto 1 · Infiltración — Grok Monterrey Build Day, 14 oct 2026. Reto de Prona
 
 ## 1 · 2022: las presas por debajo del 5 %
 
-- Cerro Prieto y La Boca cayeron a menos del 5 % de su capacidad.
-- La ZMM tenía ~13,500 L/s disponibles contra ~16,500 L/s de consumo regular.
-- Al 12 oct 2026 las presas principales están al 63.5 % (925.5 millones de m³):
+- Cerro Prieto y La Boca cayeron a menos del 5 % de su capacidad (según un análisis del Grupo Legislativo PAN en el Congreso de NL, mar 2023).
+- La ZMM tenía ~13,500 L/s disponibles contra ~16,500 L/s de consumo regular (misma fuente).
+- Al 12 oct 2026, según SADM, las presas principales están al 63.5 % (925.5 millones de m³):
   la recuperación no elimina la vulnerabilidad ante la próxima sequía larga.
 
 > Imagen sugerida: foto del vaso seco de Cerro Prieto en 2022.

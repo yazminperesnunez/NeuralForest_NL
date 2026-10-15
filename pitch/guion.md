@@ -7,10 +7,10 @@ Tener el video de respaldo abierto en otra pestaña por si falla la red.
 
 ## 0:00 – 0:30 · El problema
 
-> En 2022 Cerro Prieto y La Boca bajaron a menos del cinco por ciento.
-> Monterrey tenía trece mil quinientos litros por segundo disponibles contra
-> dieciséis mil quinientos de consumo. Hoy las presas están al sesenta y tres
-> por ciento, pero eso no quita el problema: la próxima sequía larga nos vuelve
+> Según un análisis del Grupo Legislativo PAN en el Congreso, en 2022 Cerro
+> Prieto y La Boca bajaron a menos del cinco por ciento. Monterrey tenía trece
+> mil quinientos litros por segundo disponibles contra dieciséis mil quinientos
+> de consumo. Hoy, según SADM, las presas están al sesenta y tres por ciento, pero eso no quita el problema: la próxima sequía larga nos vuelve
 > a encontrar igual.
 >
 > El agua de esas presas nace arriba, en la sierra. Si el suelo de las partes
