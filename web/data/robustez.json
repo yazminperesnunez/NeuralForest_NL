@@ -1,0 +1,5661 @@
+{
+  "meta": {
+    "fuente": "scripts/robustez_pesos.py",
+    "sorteos": 5000,
+    "semilla": 1,
+    "zonas": 563,
+    "criterio_alta": "tercio superior del ranking (188 de 563 zonas) en cada sorteo",
+    "factores_usados": [
+      "ndvi",
+      "ndmi",
+      "slope",
+      "sand",
+      "fire"
+    ],
+    "factores_faltantes": [],
+    "pesos_base": {
+      "ndvi": 0.3,
+      "ndmi": 0.2,
+      "slope": 0.2,
+      "sand": 0.15,
+      "fire": 0.15
+    },
+    "sorteo_de_pesos": "uniforme sobre pesos que suman 1 (Dirichlet con todos los parámetros en 1)",
+    "concordancia_rho_con_score": 0.993,
+    "normalizacion": "percentiles 2 y 98 de los valores por zona (aproxima la muestra de píxeles de GEE)",
+    "mock": false,
+    "alcance": "solo incertidumbre de pesos; no cubre umbrales, datos ni resolución"
+  },
+  "zonas": {
+    "Z001": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 6,
+      "rango_p05": 1,
+      "rango_p50": 7,
+      "rango_p95": 72,
+      "lectura": "robusta"
+    },
+    "Z002": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 9,
+      "rango_p05": 2,
+      "rango_p50": 19,
+      "rango_p95": 60,
+      "lectura": "robusta"
+    },
+    "Z003": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 1,
+      "rango_p05": 1,
+      "rango_p50": 1,
+      "rango_p95": 18,
+      "lectura": "robusta"
+    },
+    "Z004": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 7,
+      "rango_p05": 4,
+      "rango_p50": 9,
+      "rango_p95": 63,
+      "lectura": "robusta"
+    },
+    "Z005": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 3,
+      "rango_p05": 2,
+      "rango_p50": 4,
+      "rango_p95": 39,
+      "lectura": "robusta"
+    },
+    "Z006": {
+      "robustez_pct": 99.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 43,
+      "rango_p05": 9,
+      "rango_p50": 60,
+      "rango_p95": 135,
+      "lectura": "robusta"
+    },
+    "Z007": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 2,
+      "rango_p05": 2,
+      "rango_p50": 5,
+      "rango_p95": 22,
+      "lectura": "robusta"
+    },
+    "Z008": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 5,
+      "rango_p05": 2,
+      "rango_p50": 7,
+      "rango_p95": 27,
+      "lectura": "robusta"
+    },
+    "Z009": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 41,
+      "rango_p05": 12,
+      "rango_p50": 53,
+      "rango_p95": 112,
+      "lectura": "robusta"
+    },
+    "Z010": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 12,
+      "rango_p05": 4,
+      "rango_p50": 12,
+      "rango_p95": 77,
+      "lectura": "robusta"
+    },
+    "Z011": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 16,
+      "rango_p05": 6,
+      "rango_p50": 16,
+      "rango_p95": 86,
+      "lectura": "robusta"
+    },
+    "Z012": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 15,
+      "rango_p05": 14,
+      "rango_p50": 23,
+      "rango_p95": 56,
+      "lectura": "robusta"
+    },
+    "Z013": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 10,
+      "rango_p05": 6,
+      "rango_p50": 19,
+      "rango_p95": 47,
+      "lectura": "robusta"
+    },
+    "Z014": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 24,
+      "rango_p05": 6,
+      "rango_p50": 27,
+      "rango_p95": 113,
+      "lectura": "robusta"
+    },
+    "Z015": {
+      "robustez_pct": 99.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 22,
+      "rango_p05": 1,
+      "rango_p50": 31,
+      "rango_p95": 100,
+      "lectura": "robusta"
+    },
+    "Z016": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 50,
+      "rango_p05": 19,
+      "rango_p50": 62,
+      "rango_p95": 122,
+      "lectura": "robusta"
+    },
+    "Z017": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 8,
+      "rango_p05": 7,
+      "rango_p50": 14,
+      "rango_p95": 45,
+      "lectura": "robusta"
+    },
+    "Z018": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 4,
+      "rango_p05": 2,
+      "rango_p50": 7,
+      "rango_p95": 32,
+      "lectura": "robusta"
+    },
+    "Z019": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 11,
+      "rango_p05": 5,
+      "rango_p50": 24,
+      "rango_p95": 66,
+      "lectura": "robusta"
+    },
+    "Z020": {
+      "robustez_pct": 88.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 52,
+      "rango_p05": 11,
+      "rango_p50": 79,
+      "rango_p95": 250,
+      "lectura": "robusta"
+    },
+    "Z021": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 19,
+      "rango_p05": 11,
+      "rango_p50": 29,
+      "rango_p95": 64,
+      "lectura": "robusta"
+    },
+    "Z022": {
+      "robustez_pct": 98.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 42,
+      "rango_p05": 19,
+      "rango_p50": 60,
+      "rango_p95": 144,
+      "lectura": "robusta"
+    },
+    "Z023": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 28,
+      "rango_p05": 7,
+      "rango_p50": 28,
+      "rango_p95": 119,
+      "lectura": "robusta"
+    },
+    "Z024": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 30,
+      "rango_p05": 7,
+      "rango_p50": 29,
+      "rango_p95": 115,
+      "lectura": "robusta"
+    },
+    "Z025": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 27,
+      "rango_p05": 17,
+      "rango_p50": 47,
+      "rango_p95": 93,
+      "lectura": "robusta"
+    },
+    "Z026": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 51,
+      "rango_p05": 20,
+      "rango_p50": 71,
+      "rango_p95": 140,
+      "lectura": "robusta"
+    },
+    "Z027": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 36,
+      "rango_p05": 11,
+      "rango_p50": 35,
+      "rango_p95": 122,
+      "lectura": "robusta"
+    },
+    "Z028": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 37,
+      "rango_p05": 12,
+      "rango_p50": 37,
+      "rango_p95": 126,
+      "lectura": "robusta"
+    },
+    "Z029": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 14,
+      "rango_p05": 1,
+      "rango_p50": 18,
+      "rango_p95": 56,
+      "lectura": "robusta"
+    },
+    "Z030": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 23,
+      "rango_p05": 25,
+      "rango_p50": 37,
+      "rango_p95": 59,
+      "lectura": "robusta"
+    },
+    "Z031": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 31,
+      "rango_p05": 18,
+      "rango_p50": 44,
+      "rango_p95": 79,
+      "lectura": "robusta"
+    },
+    "Z032": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 13,
+      "rango_p05": 10,
+      "rango_p50": 19,
+      "rango_p95": 44,
+      "lectura": "robusta"
+    },
+    "Z033": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 35,
+      "rango_p05": 18,
+      "rango_p50": 33,
+      "rango_p95": 94,
+      "lectura": "robusta"
+    },
+    "Z034": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 17,
+      "rango_p05": 12,
+      "rango_p50": 23,
+      "rango_p95": 70,
+      "lectura": "robusta"
+    },
+    "Z035": {
+      "robustez_pct": 93.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 53,
+      "rango_p05": 35,
+      "rango_p50": 82,
+      "rango_p95": 203,
+      "lectura": "robusta"
+    },
+    "Z036": {
+      "robustez_pct": 99.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 54,
+      "rango_p05": 57,
+      "rango_p50": 71,
+      "rango_p95": 120,
+      "lectura": "robusta"
+    },
+    "Z037": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 18,
+      "rango_p05": 8,
+      "rango_p50": 34,
+      "rango_p95": 77,
+      "lectura": "robusta"
+    },
+    "Z038": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 25,
+      "rango_p05": 20,
+      "rango_p50": 37,
+      "rango_p95": 63,
+      "lectura": "robusta"
+    },
+    "Z039": {
+      "robustez_pct": 99.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 26,
+      "rango_p05": 7,
+      "rango_p50": 48,
+      "rango_p95": 134,
+      "lectura": "robusta"
+    },
+    "Z040": {
+      "robustez_pct": 78.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 102,
+      "rango_p05": 41,
+      "rango_p50": 122,
+      "rango_p95": 333,
+      "lectura": "sensible a los pesos"
+    },
+    "Z041": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 38,
+      "rango_p05": 30,
+      "rango_p50": 38,
+      "rango_p95": 80,
+      "lectura": "robusta"
+    },
+    "Z042": {
+      "robustez_pct": 72.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 82,
+      "rango_p05": 13,
+      "rango_p50": 119,
+      "rango_p95": 404,
+      "lectura": "sensible a los pesos"
+    },
+    "Z043": {
+      "robustez_pct": 95.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 63,
+      "rango_p05": 42,
+      "rango_p50": 85,
+      "rango_p95": 186,
+      "lectura": "robusta"
+    },
+    "Z044": {
+      "robustez_pct": 82.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 72,
+      "rango_p05": 24,
+      "rango_p50": 107,
+      "rango_p95": 301,
+      "lectura": "robusta"
+    },
+    "Z045": {
+      "robustez_pct": 87.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 71,
+      "rango_p05": 24,
+      "rango_p50": 93,
+      "rango_p95": 260,
+      "lectura": "robusta"
+    },
+    "Z046": {
+      "robustez_pct": 99.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 39,
+      "rango_p05": 18,
+      "rango_p50": 50,
+      "rango_p95": 110,
+      "lectura": "robusta"
+    },
+    "Z047": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 20,
+      "rango_p05": 9,
+      "rango_p50": 28,
+      "rango_p95": 110,
+      "lectura": "robusta"
+    },
+    "Z048": {
+      "robustez_pct": 73.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 94,
+      "rango_p05": 18,
+      "rango_p50": 133,
+      "rango_p95": 353,
+      "lectura": "sensible a los pesos"
+    },
+    "Z049": {
+      "robustez_pct": 92.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 60,
+      "rango_p05": 41,
+      "rango_p50": 80,
+      "rango_p95": 214,
+      "lectura": "robusta"
+    },
+    "Z050": {
+      "robustez_pct": 99.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 59,
+      "rango_p05": 51,
+      "rango_p50": 76,
+      "rango_p95": 130,
+      "lectura": "robusta"
+    },
+    "Z051": {
+      "robustez_pct": 72.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 83,
+      "rango_p05": 15,
+      "rango_p50": 124,
+      "rango_p95": 398,
+      "lectura": "sensible a los pesos"
+    },
+    "Z052": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 32,
+      "rango_p05": 13,
+      "rango_p50": 40,
+      "rango_p95": 84,
+      "lectura": "robusta"
+    },
+    "Z053": {
+      "robustez_pct": 84.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 78,
+      "rango_p05": 33,
+      "rango_p50": 100,
+      "rango_p95": 297,
+      "lectura": "robusta"
+    },
+    "Z054": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 21,
+      "rango_p05": 19,
+      "rango_p50": 28,
+      "rango_p95": 67,
+      "lectura": "robusta"
+    },
+    "Z055": {
+      "robustez_pct": 83.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 84,
+      "rango_p05": 35,
+      "rango_p50": 114,
+      "rango_p95": 286,
+      "lectura": "robusta"
+    },
+    "Z056": {
+      "robustez_pct": 96.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 44,
+      "rango_p05": 25,
+      "rango_p50": 57,
+      "rango_p95": 172,
+      "lectura": "robusta"
+    },
+    "Z057": {
+      "robustez_pct": 95.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 57,
+      "rango_p05": 42,
+      "rango_p50": 74,
+      "rango_p95": 188,
+      "lectura": "robusta"
+    },
+    "Z058": {
+      "robustez_pct": 95.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 46,
+      "rango_p05": 21,
+      "rango_p50": 56,
+      "rango_p95": 184,
+      "lectura": "robusta"
+    },
+    "Z059": {
+      "robustez_pct": 76.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 81,
+      "rango_p05": 30,
+      "rango_p50": 118,
+      "rango_p95": 363,
+      "lectura": "sensible a los pesos"
+    },
+    "Z060": {
+      "robustez_pct": 85.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 90,
+      "rango_p05": 55,
+      "rango_p50": 113,
+      "rango_p95": 267,
+      "lectura": "robusta"
+    },
+    "Z061": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 40,
+      "rango_p05": 19,
+      "rango_p50": 44,
+      "rango_p95": 92,
+      "lectura": "robusta"
+    },
+    "Z062": {
+      "robustez_pct": 87.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 79,
+      "rango_p05": 53,
+      "rango_p50": 111,
+      "rango_p95": 241,
+      "lectura": "robusta"
+    },
+    "Z063": {
+      "robustez_pct": 78.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 87,
+      "rango_p05": 22,
+      "rango_p50": 124,
+      "rango_p95": 325,
+      "lectura": "sensible a los pesos"
+    },
+    "Z064": {
+      "robustez_pct": 95.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 61,
+      "rango_p05": 38,
+      "rango_p50": 75,
+      "rango_p95": 188,
+      "lectura": "robusta"
+    },
+    "Z065": {
+      "robustez_pct": 84.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 75,
+      "rango_p05": 31,
+      "rango_p50": 99,
+      "rango_p95": 295,
+      "lectura": "robusta"
+    },
+    "Z066": {
+      "robustez_pct": 98.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 69,
+      "rango_p05": 11,
+      "rango_p50": 64,
+      "rango_p95": 170,
+      "lectura": "robusta"
+    },
+    "Z067": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 33,
+      "rango_p05": 18,
+      "rango_p50": 32,
+      "rango_p95": 88,
+      "lectura": "robusta"
+    },
+    "Z068": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 49,
+      "rango_p05": 15,
+      "rango_p50": 61,
+      "rango_p95": 103,
+      "lectura": "robusta"
+    },
+    "Z069": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 55,
+      "rango_p05": 40,
+      "rango_p50": 53,
+      "rango_p95": 108,
+      "lectura": "robusta"
+    },
+    "Z070": {
+      "robustez_pct": 98.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 34,
+      "rango_p05": 9,
+      "rango_p50": 47,
+      "rango_p95": 147,
+      "lectura": "robusta"
+    },
+    "Z071": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 45,
+      "rango_p05": 14,
+      "rango_p50": 44,
+      "rango_p95": 115,
+      "lectura": "robusta"
+    },
+    "Z072": {
+      "robustez_pct": 74.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 92,
+      "rango_p05": 34,
+      "rango_p50": 120,
+      "rango_p95": 375,
+      "lectura": "sensible a los pesos"
+    },
+    "Z073": {
+      "robustez_pct": 84.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 67,
+      "rango_p05": 25,
+      "rango_p50": 94,
+      "rango_p95": 295,
+      "lectura": "robusta"
+    },
+    "Z074": {
+      "robustez_pct": 99.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 66,
+      "rango_p05": 55,
+      "rango_p50": 79,
+      "rango_p95": 139,
+      "lectura": "robusta"
+    },
+    "Z075": {
+      "robustez_pct": 94.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 47,
+      "rango_p05": 17,
+      "rango_p50": 62,
+      "rango_p95": 199,
+      "lectura": "robusta"
+    },
+    "Z076": {
+      "robustez_pct": 76.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 56,
+      "rango_p05": 4,
+      "rango_p50": 85,
+      "rango_p95": 423,
+      "lectura": "sensible a los pesos"
+    },
+    "Z077": {
+      "robustez_pct": 96.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 74,
+      "rango_p05": 13,
+      "rango_p50": 75,
+      "rango_p95": 184,
+      "lectura": "robusta"
+    },
+    "Z078": {
+      "robustez_pct": 92.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 89,
+      "rango_p05": 80,
+      "rango_p50": 106,
+      "rango_p95": 205,
+      "lectura": "robusta"
+    },
+    "Z079": {
+      "robustez_pct": 60.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 124,
+      "rango_p05": 34,
+      "rango_p50": 160,
+      "rango_p95": 464,
+      "lectura": "sensible a los pesos"
+    },
+    "Z080": {
+      "robustez_pct": 99.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 29,
+      "rango_p05": 7,
+      "rango_p50": 47,
+      "rango_p95": 109,
+      "lectura": "robusta"
+    },
+    "Z081": {
+      "robustez_pct": 74.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 76,
+      "rango_p05": 23,
+      "rango_p50": 111,
+      "rango_p95": 399,
+      "lectura": "sensible a los pesos"
+    },
+    "Z082": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 70,
+      "rango_p05": 29,
+      "rango_p50": 64,
+      "rango_p95": 118,
+      "lectura": "robusta"
+    },
+    "Z083": {
+      "robustez_pct": 63.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 117,
+      "rango_p05": 24,
+      "rango_p50": 153,
+      "rango_p95": 452,
+      "lectura": "sensible a los pesos"
+    },
+    "Z084": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 48,
+      "rango_p05": 9,
+      "rango_p50": 48,
+      "rango_p95": 115,
+      "lectura": "robusta"
+    },
+    "Z085": {
+      "robustez_pct": 65.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 114,
+      "rango_p05": 36,
+      "rango_p50": 147,
+      "rango_p95": 438,
+      "lectura": "sensible a los pesos"
+    },
+    "Z086": {
+      "robustez_pct": 88.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 62,
+      "rango_p05": 25,
+      "rango_p50": 84,
+      "rango_p95": 249,
+      "lectura": "robusta"
+    },
+    "Z087": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 86,
+      "rango_p05": 24,
+      "rango_p50": 85,
+      "rango_p95": 150,
+      "lectura": "robusta"
+    },
+    "Z088": {
+      "robustez_pct": 99.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 98,
+      "rango_p05": 83,
+      "rango_p50": 100,
+      "rango_p95": 134,
+      "lectura": "robusta"
+    },
+    "Z089": {
+      "robustez_pct": 69.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 106,
+      "rango_p05": 29,
+      "rango_p50": 145,
+      "rango_p95": 382,
+      "lectura": "sensible a los pesos"
+    },
+    "Z090": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 93,
+      "rango_p05": 75,
+      "rango_p50": 90,
+      "rango_p95": 120,
+      "lectura": "robusta"
+    },
+    "Z091": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 85,
+      "rango_p05": 36,
+      "rango_p50": 79,
+      "rango_p95": 129,
+      "lectura": "robusta"
+    },
+    "Z092": {
+      "robustez_pct": 67.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 115,
+      "rango_p05": 51,
+      "rango_p50": 142,
+      "rango_p95": 413,
+      "lectura": "sensible a los pesos"
+    },
+    "Z093": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 58,
+      "rango_p05": 31,
+      "rango_p50": 51,
+      "rango_p95": 117,
+      "lectura": "robusta"
+    },
+    "Z094": {
+      "robustez_pct": 99.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 103,
+      "rango_p05": 86,
+      "rango_p50": 106,
+      "rango_p95": 142,
+      "lectura": "robusta"
+    },
+    "Z095": {
+      "robustez_pct": 99.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 64,
+      "rango_p05": 28,
+      "rango_p50": 71,
+      "rango_p95": 138,
+      "lectura": "robusta"
+    },
+    "Z096": {
+      "robustez_pct": 96.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 112,
+      "rango_p05": 87,
+      "rango_p50": 121,
+      "rango_p95": 179,
+      "lectura": "robusta"
+    },
+    "Z097": {
+      "robustez_pct": 64.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 113,
+      "rango_p05": 23,
+      "rango_p50": 149,
+      "rango_p95": 457,
+      "lectura": "sensible a los pesos"
+    },
+    "Z098": {
+      "robustez_pct": 99.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 95,
+      "rango_p05": 39,
+      "rango_p50": 78,
+      "rango_p95": 143,
+      "lectura": "robusta"
+    },
+    "Z099": {
+      "robustez_pct": 94.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 91,
+      "rango_p05": 14,
+      "rango_p50": 84,
+      "rango_p95": 191,
+      "lectura": "robusta"
+    },
+    "Z100": {
+      "robustez_pct": 99.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 107,
+      "rango_p05": 85,
+      "rango_p50": 107,
+      "rango_p95": 148,
+      "lectura": "robusta"
+    },
+    "Z101": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 77,
+      "rango_p05": 64,
+      "rango_p50": 90,
+      "rango_p95": 118,
+      "lectura": "robusta"
+    },
+    "Z102": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 65,
+      "rango_p05": 21,
+      "rango_p50": 51,
+      "rango_p95": 135,
+      "lectura": "robusta"
+    },
+    "Z103": {
+      "robustez_pct": 99.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 88,
+      "rango_p05": 31,
+      "rango_p50": 91,
+      "rango_p95": 154,
+      "lectura": "robusta"
+    },
+    "Z104": {
+      "robustez_pct": 97.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 109,
+      "rango_p05": 91,
+      "rango_p50": 114,
+      "rango_p95": 170,
+      "lectura": "robusta"
+    },
+    "Z105": {
+      "robustez_pct": 95.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 128,
+      "rango_p05": 3,
+      "rango_p50": 113,
+      "rango_p95": 186,
+      "lectura": "robusta"
+    },
+    "Z106": {
+      "robustez_pct": 94.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 80,
+      "rango_p05": 48,
+      "rango_p50": 100,
+      "rango_p95": 194,
+      "lectura": "robusta"
+    },
+    "Z107": {
+      "robustez_pct": 61.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 121,
+      "rango_p05": 26,
+      "rango_p50": 158,
+      "rango_p95": 462,
+      "lectura": "sensible a los pesos"
+    },
+    "Z108": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 104,
+      "rango_p05": 75,
+      "rango_p50": 118,
+      "rango_p95": 149,
+      "lectura": "robusta"
+    },
+    "Z109": {
+      "robustez_pct": 97.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 68,
+      "rango_p05": 32,
+      "rango_p50": 81,
+      "rango_p95": 165,
+      "lectura": "robusta"
+    },
+    "Z110": {
+      "robustez_pct": 63.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 119,
+      "rango_p05": 44,
+      "rango_p50": 148,
+      "rango_p95": 461,
+      "lectura": "sensible a los pesos"
+    },
+    "Z111": {
+      "robustez_pct": 99.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 105,
+      "rango_p05": 59,
+      "rango_p50": 110,
+      "rango_p95": 168,
+      "lectura": "robusta"
+    },
+    "Z112": {
+      "robustez_pct": 58.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 131,
+      "rango_p05": 48,
+      "rango_p50": 163,
+      "rango_p95": 466,
+      "lectura": "sensible a los pesos"
+    },
+    "Z113": {
+      "robustez_pct": 57.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 132,
+      "rango_p05": 44,
+      "rango_p50": 169,
+      "rango_p95": 469,
+      "lectura": "sensible a los pesos"
+    },
+    "Z114": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 100,
+      "rango_p05": 47,
+      "rango_p50": 78,
+      "rango_p95": 143,
+      "lectura": "robusta"
+    },
+    "Z115": {
+      "robustez_pct": 97.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 108,
+      "rango_p05": 45,
+      "rango_p50": 98,
+      "rango_p95": 179,
+      "lectura": "robusta"
+    },
+    "Z116": {
+      "robustez_pct": 98.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 122,
+      "rango_p05": 77,
+      "rango_p50": 118,
+      "rango_p95": 174,
+      "lectura": "robusta"
+    },
+    "Z117": {
+      "robustez_pct": 98.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 126,
+      "rango_p05": 68,
+      "rango_p50": 116,
+      "rango_p95": 172,
+      "lectura": "robusta"
+    },
+    "Z118": {
+      "robustez_pct": 91.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 97,
+      "rango_p05": 35,
+      "rango_p50": 110,
+      "rango_p95": 205,
+      "lectura": "robusta"
+    },
+    "Z119": {
+      "robustez_pct": 98.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 101,
+      "rango_p05": 35,
+      "rango_p50": 70,
+      "rango_p95": 168,
+      "lectura": "robusta"
+    },
+    "Z120": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 116,
+      "rango_p05": 60,
+      "rango_p50": 109,
+      "rango_p95": 145,
+      "lectura": "robusta"
+    },
+    "Z121": {
+      "robustez_pct": 99.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 129,
+      "rango_p05": 96,
+      "rango_p50": 119,
+      "rango_p95": 156,
+      "lectura": "robusta"
+    },
+    "Z122": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 73,
+      "rango_p05": 32,
+      "rango_p50": 66,
+      "rango_p95": 135,
+      "lectura": "robusta"
+    },
+    "Z123": {
+      "robustez_pct": 84.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 123,
+      "rango_p05": 18,
+      "rango_p50": 109,
+      "rango_p95": 222,
+      "lectura": "robusta"
+    },
+    "Z124": {
+      "robustez_pct": 99.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 118,
+      "rango_p05": 51,
+      "rango_p50": 100,
+      "rango_p95": 156,
+      "lectura": "robusta"
+    },
+    "Z125": {
+      "robustez_pct": 89.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 143,
+      "rango_p05": 59,
+      "rango_p50": 127,
+      "rango_p95": 206,
+      "lectura": "robusta"
+    },
+    "Z126": {
+      "robustez_pct": 83.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 147,
+      "rango_p05": 82,
+      "rango_p50": 145,
+      "rango_p95": 211,
+      "lectura": "robusta"
+    },
+    "Z127": {
+      "robustez_pct": 75.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 151,
+      "rango_p05": 18,
+      "rango_p50": 130,
+      "rango_p95": 250,
+      "lectura": "sensible a los pesos"
+    },
+    "Z128": {
+      "robustez_pct": 94.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 111,
+      "rango_p05": 37,
+      "rango_p50": 80,
+      "rango_p95": 194,
+      "lectura": "robusta"
+    },
+    "Z129": {
+      "robustez_pct": 97.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 96,
+      "rango_p05": 25,
+      "rango_p50": 99,
+      "rango_p95": 180,
+      "lectura": "robusta"
+    },
+    "Z130": {
+      "robustez_pct": 91.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 142,
+      "rango_p05": 63,
+      "rango_p50": 128,
+      "rango_p95": 199,
+      "lectura": "robusta"
+    },
+    "Z131": {
+      "robustez_pct": 55.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 141,
+      "rango_p05": 69,
+      "rango_p50": 175,
+      "rango_p95": 474,
+      "lectura": "sensible a los pesos"
+    },
+    "Z132": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 110,
+      "rango_p05": 70,
+      "rango_p50": 111,
+      "rango_p95": 158,
+      "lectura": "robusta"
+    },
+    "Z133": {
+      "robustez_pct": 99.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 120,
+      "rango_p05": 73,
+      "rango_p50": 99,
+      "rango_p95": 163,
+      "lectura": "robusta"
+    },
+    "Z134": {
+      "robustez_pct": 79.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 145,
+      "rango_p05": 73,
+      "rango_p50": 144,
+      "rango_p95": 220,
+      "lectura": "sensible a los pesos"
+    },
+    "Z135": {
+      "robustez_pct": 55.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 139,
+      "rango_p05": 61,
+      "rango_p50": 177,
+      "rango_p95": 474,
+      "lectura": "sensible a los pesos"
+    },
+    "Z136": {
+      "robustez_pct": 95.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 99,
+      "rango_p05": 23,
+      "rango_p50": 85,
+      "rango_p95": 186,
+      "lectura": "robusta"
+    },
+    "Z137": {
+      "robustez_pct": 87.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 135,
+      "rango_p05": 96,
+      "rango_p50": 134,
+      "rango_p95": 217,
+      "lectura": "robusta"
+    },
+    "Z138": {
+      "robustez_pct": 99.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 134,
+      "rango_p05": 98,
+      "rango_p50": 133,
+      "rango_p95": 172,
+      "lectura": "robusta"
+    },
+    "Z139": {
+      "robustez_pct": 94.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 149,
+      "rango_p05": 131,
+      "rango_p50": 151,
+      "rango_p95": 190,
+      "lectura": "robusta"
+    },
+    "Z140": {
+      "robustez_pct": 89.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 152,
+      "rango_p05": 122,
+      "rango_p50": 162,
+      "rango_p95": 200,
+      "lectura": "robusta"
+    },
+    "Z141": {
+      "robustez_pct": 100.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 133,
+      "rango_p05": 105,
+      "rango_p50": 128,
+      "rango_p95": 149,
+      "lectura": "robusta"
+    },
+    "Z142": {
+      "robustez_pct": 84.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 154,
+      "rango_p05": 67,
+      "rango_p50": 143,
+      "rango_p95": 231,
+      "lectura": "robusta"
+    },
+    "Z143": {
+      "robustez_pct": 86.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 130,
+      "rango_p05": 38,
+      "rango_p50": 120,
+      "rango_p95": 218,
+      "lectura": "robusta"
+    },
+    "Z144": {
+      "robustez_pct": 99.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 146,
+      "rango_p05": 123,
+      "rango_p50": 143,
+      "rango_p95": 163,
+      "lectura": "robusta"
+    },
+    "Z145": {
+      "robustez_pct": 93.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 140,
+      "rango_p05": 97,
+      "rango_p50": 133,
+      "rango_p95": 194,
+      "lectura": "robusta"
+    },
+    "Z146": {
+      "robustez_pct": 86.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 155,
+      "rango_p05": 101,
+      "rango_p50": 145,
+      "rango_p95": 210,
+      "lectura": "robusta"
+    },
+    "Z147": {
+      "robustez_pct": 86.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 148,
+      "rango_p05": 97,
+      "rango_p50": 144,
+      "rango_p95": 205,
+      "lectura": "robusta"
+    },
+    "Z148": {
+      "robustez_pct": 92.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 156,
+      "rango_p05": 118,
+      "rango_p50": 157,
+      "rango_p95": 193,
+      "lectura": "robusta"
+    },
+    "Z149": {
+      "robustez_pct": 70.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 160,
+      "rango_p05": 21,
+      "rango_p50": 145,
+      "rango_p95": 269,
+      "lectura": "sensible a los pesos"
+    },
+    "Z150": {
+      "robustez_pct": 78.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 165,
+      "rango_p05": 107,
+      "rango_p50": 166,
+      "rango_p95": 222,
+      "lectura": "sensible a los pesos"
+    },
+    "Z151": {
+      "robustez_pct": 51.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "alta",
+      "rango_base": 193,
+      "rango_p05": 6,
+      "rango_p50": 186,
+      "rango_p95": 286,
+      "lectura": "no alta en base, pero sube con otros pesos"
+    },
+    "Z152": {
+      "robustez_pct": 67.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 171,
+      "rango_p05": 122,
+      "rango_p50": 169,
+      "rango_p95": 230,
+      "lectura": "sensible a los pesos"
+    },
+    "Z153": {
+      "robustez_pct": 93.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 127,
+      "rango_p05": 50,
+      "rango_p50": 98,
+      "rango_p95": 195,
+      "lectura": "robusta"
+    },
+    "Z154": {
+      "robustez_pct": 75.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 167,
+      "rango_p05": 140,
+      "rango_p50": 168,
+      "rango_p95": 213,
+      "lectura": "sensible a los pesos"
+    },
+    "Z155": {
+      "robustez_pct": 84.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 137,
+      "rango_p05": 57,
+      "rango_p50": 126,
+      "rango_p95": 223,
+      "lectura": "robusta"
+    },
+    "Z156": {
+      "robustez_pct": 89.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 163,
+      "rango_p05": 132,
+      "rango_p50": 160,
+      "rango_p95": 198,
+      "lectura": "robusta"
+    },
+    "Z157": {
+      "robustez_pct": 83.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 125,
+      "rango_p05": 31,
+      "rango_p50": 121,
+      "rango_p95": 223,
+      "lectura": "robusta"
+    },
+    "Z158": {
+      "robustez_pct": 68.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 172,
+      "rango_p05": 134,
+      "rango_p50": 170,
+      "rango_p95": 235,
+      "lectura": "sensible a los pesos"
+    },
+    "Z159": {
+      "robustez_pct": 98.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 144,
+      "rango_p05": 115,
+      "rango_p50": 139,
+      "rango_p95": 176,
+      "lectura": "robusta"
+    },
+    "Z160": {
+      "robustez_pct": 77.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 166,
+      "rango_p05": 60,
+      "rango_p50": 164,
+      "rango_p95": 209,
+      "lectura": "sensible a los pesos"
+    },
+    "Z161": {
+      "robustez_pct": 79.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 158,
+      "rango_p05": 64,
+      "rango_p50": 135,
+      "rango_p95": 248,
+      "lectura": "sensible a los pesos"
+    },
+    "Z162": {
+      "robustez_pct": 81.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 157,
+      "rango_p05": 82,
+      "rango_p50": 139,
+      "rango_p95": 230,
+      "lectura": "robusta"
+    },
+    "Z163": {
+      "robustez_pct": 69.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 173,
+      "rango_p05": 53,
+      "rango_p50": 168,
+      "rango_p95": 224,
+      "lectura": "sensible a los pesos"
+    },
+    "Z164": {
+      "robustez_pct": 78.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 153,
+      "rango_p05": 64,
+      "rango_p50": 131,
+      "rango_p95": 253,
+      "lectura": "sensible a los pesos"
+    },
+    "Z165": {
+      "robustez_pct": 55.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "alta",
+      "rango_base": 189,
+      "rango_p05": 8,
+      "rango_p50": 181,
+      "rango_p95": 239,
+      "lectura": "no alta en base, pero sube con otros pesos"
+    },
+    "Z166": {
+      "robustez_pct": 36.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 185,
+      "rango_p05": 127,
+      "rango_p50": 203,
+      "rango_p95": 261,
+      "lectura": "frágil"
+    },
+    "Z167": {
+      "robustez_pct": 82.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 162,
+      "rango_p05": 77,
+      "rango_p50": 140,
+      "rango_p95": 245,
+      "lectura": "robusta"
+    },
+    "Z168": {
+      "robustez_pct": 79.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 138,
+      "rango_p05": 26,
+      "rango_p50": 111,
+      "rango_p95": 267,
+      "lectura": "sensible a los pesos"
+    },
+    "Z169": {
+      "robustez_pct": 54.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 184,
+      "rango_p05": 116,
+      "rango_p50": 184,
+      "rango_p95": 229,
+      "lectura": "sensible a los pesos"
+    },
+    "Z170": {
+      "robustez_pct": 76.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 170,
+      "rango_p05": 122,
+      "rango_p50": 160,
+      "rango_p95": 240,
+      "lectura": "sensible a los pesos"
+    },
+    "Z171": {
+      "robustez_pct": 78.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 161,
+      "rango_p05": 103,
+      "rango_p50": 153,
+      "rango_p95": 233,
+      "lectura": "sensible a los pesos"
+    },
+    "Z172": {
+      "robustez_pct": 38.0,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 176,
+      "rango_p05": 148,
+      "rango_p50": 196,
+      "rango_p95": 232,
+      "lectura": "frágil"
+    },
+    "Z173": {
+      "robustez_pct": 93.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 136,
+      "rango_p05": 78,
+      "rango_p50": 113,
+      "rango_p95": 194,
+      "lectura": "robusta"
+    },
+    "Z174": {
+      "robustez_pct": 73.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 164,
+      "rango_p05": 52,
+      "rango_p50": 149,
+      "rango_p95": 276,
+      "lectura": "sensible a los pesos"
+    },
+    "Z175": {
+      "robustez_pct": 78.4,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 168,
+      "rango_p05": 115,
+      "rango_p50": 167,
+      "rango_p95": 219,
+      "lectura": "sensible a los pesos"
+    },
+    "Z176": {
+      "robustez_pct": 70.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 159,
+      "rango_p05": 53,
+      "rango_p50": 144,
+      "rango_p95": 291,
+      "lectura": "sensible a los pesos"
+    },
+    "Z177": {
+      "robustez_pct": 45.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 179,
+      "rango_p05": 153,
+      "rango_p50": 195,
+      "rango_p95": 326,
+      "lectura": "frágil"
+    },
+    "Z178": {
+      "robustez_pct": 45.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "alta",
+      "rango_base": 206,
+      "rango_p05": 109,
+      "rango_p50": 194,
+      "rango_p95": 278,
+      "lectura": "no alta"
+    },
+    "Z179": {
+      "robustez_pct": 60.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 188,
+      "rango_p05": 110,
+      "rango_p50": 180,
+      "rango_p95": 259,
+      "lectura": "sensible a los pesos"
+    },
+    "Z180": {
+      "robustez_pct": 35.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 182,
+      "rango_p05": 128,
+      "rango_p50": 204,
+      "rango_p95": 249,
+      "lectura": "frágil"
+    },
+    "Z181": {
+      "robustez_pct": 62.5,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 186,
+      "rango_p05": 110,
+      "rango_p50": 175,
+      "rango_p95": 238,
+      "lectura": "sensible a los pesos"
+    },
+    "Z182": {
+      "robustez_pct": 37.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 178,
+      "rango_p05": 158,
+      "rango_p50": 197,
+      "rango_p95": 257,
+      "lectura": "frágil"
+    },
+    "Z183": {
+      "robustez_pct": 52.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "alta",
+      "rango_base": 195,
+      "rango_p05": 76,
+      "rango_p50": 185,
+      "rango_p95": 257,
+      "lectura": "no alta en base, pero sube con otros pesos"
+    },
+    "Z184": {
+      "robustez_pct": 36.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "alta",
+      "rango_base": 225,
+      "rango_p05": 12,
+      "rango_p50": 223,
+      "rango_p95": 351,
+      "lectura": "no alta"
+    },
+    "Z185": {
+      "robustez_pct": 43.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "alta",
+      "rango_base": 220,
+      "rango_p05": 96,
+      "rango_p50": 203,
+      "rango_p95": 346,
+      "lectura": "no alta"
+    },
+    "Z186": {
+      "robustez_pct": 56.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 181,
+      "rango_p05": 144,
+      "rango_p50": 182,
+      "rango_p95": 237,
+      "lectura": "sensible a los pesos"
+    },
+    "Z187": {
+      "robustez_pct": 76.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "alta",
+      "rango_base": 150,
+      "rango_p05": 32,
+      "rango_p50": 124,
+      "rango_p95": 282,
+      "lectura": "sensible a los pesos"
+    },
+    "Z188": {
+      "robustez_pct": 32.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 222,
+      "rango_p05": 145,
+      "rango_p50": 212,
+      "rango_p95": 303,
+      "lectura": "no alta"
+    },
+    "Z189": {
+      "robustez_pct": 51.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 211,
+      "rango_p05": 33,
+      "rango_p50": 183,
+      "rango_p95": 364,
+      "lectura": "no alta en base, pero sube con otros pesos"
+    },
+    "Z190": {
+      "robustez_pct": 58.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 192,
+      "rango_p05": 84,
+      "rango_p50": 174,
+      "rango_p95": 268,
+      "lectura": "no alta en base, pero sube con otros pesos"
+    },
+    "Z191": {
+      "robustez_pct": 34.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 233,
+      "rango_p05": 92,
+      "rango_p50": 221,
+      "rango_p95": 348,
+      "lectura": "no alta"
+    },
+    "Z192": {
+      "robustez_pct": 56.7,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 169,
+      "rango_p05": 118,
+      "rango_p50": 178,
+      "rango_p95": 270,
+      "lectura": "sensible a los pesos"
+    },
+    "Z193": {
+      "robustez_pct": 58.6,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 180,
+      "rango_p05": 63,
+      "rango_p50": 180,
+      "rango_p95": 299,
+      "lectura": "sensible a los pesos"
+    },
+    "Z194": {
+      "robustez_pct": 21.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 204,
+      "rango_p05": 149,
+      "rango_p50": 233,
+      "rango_p95": 318,
+      "lectura": "no alta"
+    },
+    "Z195": {
+      "robustez_pct": 16.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 209,
+      "rango_p05": 157,
+      "rango_p50": 233,
+      "rango_p95": 272,
+      "lectura": "no alta"
+    },
+    "Z196": {
+      "robustez_pct": 17.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 216,
+      "rango_p05": 160,
+      "rango_p50": 227,
+      "rango_p95": 280,
+      "lectura": "no alta"
+    },
+    "Z197": {
+      "robustez_pct": 39.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 213,
+      "rango_p05": 99,
+      "rango_p50": 199,
+      "rango_p95": 276,
+      "lectura": "no alta"
+    },
+    "Z198": {
+      "robustez_pct": 48.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 191,
+      "rango_p05": 160,
+      "rango_p50": 190,
+      "rango_p95": 249,
+      "lectura": "no alta"
+    },
+    "Z199": {
+      "robustez_pct": 20.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 246,
+      "rango_p05": 156,
+      "rango_p50": 238,
+      "rango_p95": 352,
+      "lectura": "no alta"
+    },
+    "Z200": {
+      "robustez_pct": 31.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 197,
+      "rango_p05": 156,
+      "rango_p50": 199,
+      "rango_p95": 237,
+      "lectura": "no alta"
+    },
+    "Z201": {
+      "robustez_pct": 4.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 214,
+      "rango_p05": 189,
+      "rango_p50": 209,
+      "rango_p95": 259,
+      "lectura": "no alta"
+    },
+    "Z202": {
+      "robustez_pct": 28.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 219,
+      "rango_p05": 129,
+      "rango_p50": 211,
+      "rango_p95": 268,
+      "lectura": "no alta"
+    },
+    "Z203": {
+      "robustez_pct": 13.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 239,
+      "rango_p05": 175,
+      "rango_p50": 240,
+      "rango_p95": 336,
+      "lectura": "no alta"
+    },
+    "Z204": {
+      "robustez_pct": 63.2,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 174,
+      "rango_p05": 83,
+      "rango_p50": 165,
+      "rango_p95": 300,
+      "lectura": "sensible a los pesos"
+    },
+    "Z205": {
+      "robustez_pct": 44.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 190,
+      "rango_p05": 11,
+      "rango_p50": 197,
+      "rango_p95": 288,
+      "lectura": "no alta"
+    },
+    "Z206": {
+      "robustez_pct": 14.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 237,
+      "rango_p05": 162,
+      "rango_p50": 236,
+      "rango_p95": 321,
+      "lectura": "no alta"
+    },
+    "Z207": {
+      "robustez_pct": 31.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 247,
+      "rango_p05": 68,
+      "rango_p50": 235,
+      "rango_p95": 381,
+      "lectura": "no alta"
+    },
+    "Z208": {
+      "robustez_pct": 57.3,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 183,
+      "rango_p05": 88,
+      "rango_p50": 176,
+      "rango_p95": 307,
+      "lectura": "sensible a los pesos"
+    },
+    "Z209": {
+      "robustez_pct": 34.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 202,
+      "rango_p05": 126,
+      "rango_p50": 202,
+      "rango_p95": 231,
+      "lectura": "no alta"
+    },
+    "Z210": {
+      "robustez_pct": 26.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 205,
+      "rango_p05": 153,
+      "rango_p50": 205,
+      "rango_p95": 244,
+      "lectura": "no alta"
+    },
+    "Z211": {
+      "robustez_pct": 44.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 227,
+      "rango_p05": 60,
+      "rango_p50": 203,
+      "rango_p95": 372,
+      "lectura": "no alta"
+    },
+    "Z212": {
+      "robustez_pct": 58.8,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 187,
+      "rango_p05": 116,
+      "rango_p50": 177,
+      "rango_p95": 282,
+      "lectura": "sensible a los pesos"
+    },
+    "Z213": {
+      "robustez_pct": 64.1,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 177,
+      "rango_p05": 57,
+      "rango_p50": 155,
+      "rango_p95": 325,
+      "lectura": "sensible a los pesos"
+    },
+    "Z214": {
+      "robustez_pct": 9.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 210,
+      "rango_p05": 181,
+      "rango_p50": 213,
+      "rango_p95": 251,
+      "lectura": "no alta"
+    },
+    "Z215": {
+      "robustez_pct": 43.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 203,
+      "rango_p05": 106,
+      "rango_p50": 197,
+      "rango_p95": 246,
+      "lectura": "no alta"
+    },
+    "Z216": {
+      "robustez_pct": 11.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 221,
+      "rango_p05": 169,
+      "rango_p50": 245,
+      "rango_p95": 292,
+      "lectura": "no alta"
+    },
+    "Z217": {
+      "robustez_pct": 8.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 207,
+      "rango_p05": 187,
+      "rango_p50": 213,
+      "rango_p95": 265,
+      "lectura": "no alta"
+    },
+    "Z218": {
+      "robustez_pct": 61.9,
+      "alta_en_base": true,
+      "prioridad_exportada": "media",
+      "rango_base": 175,
+      "rango_p05": 159,
+      "rango_p50": 179,
+      "rango_p95": 229,
+      "lectura": "sensible a los pesos"
+    },
+    "Z219": {
+      "robustez_pct": 46.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 228,
+      "rango_p05": 50,
+      "rango_p50": 200,
+      "rango_p95": 370,
+      "lectura": "no alta"
+    },
+    "Z220": {
+      "robustez_pct": 45.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 198,
+      "rango_p05": 92,
+      "rango_p50": 199,
+      "rango_p95": 336,
+      "lectura": "no alta"
+    },
+    "Z221": {
+      "robustez_pct": 31.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 217,
+      "rango_p05": 143,
+      "rango_p50": 224,
+      "rango_p95": 328,
+      "lectura": "no alta"
+    },
+    "Z222": {
+      "robustez_pct": 42.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 194,
+      "rango_p05": 152,
+      "rango_p50": 195,
+      "rango_p95": 269,
+      "lectura": "no alta"
+    },
+    "Z223": {
+      "robustez_pct": 44.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 199,
+      "rango_p05": 149,
+      "rango_p50": 194,
+      "rango_p95": 287,
+      "lectura": "no alta"
+    },
+    "Z224": {
+      "robustez_pct": 27.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 252,
+      "rango_p05": 120,
+      "rango_p50": 241,
+      "rango_p95": 385,
+      "lectura": "no alta"
+    },
+    "Z225": {
+      "robustez_pct": 0.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 232,
+      "rango_p05": 204,
+      "rango_p50": 233,
+      "rango_p95": 258,
+      "lectura": "no alta"
+    },
+    "Z226": {
+      "robustez_pct": 16.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 230,
+      "rango_p05": 149,
+      "rango_p50": 226,
+      "rango_p95": 264,
+      "lectura": "no alta"
+    },
+    "Z227": {
+      "robustez_pct": 14.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 269,
+      "rango_p05": 164,
+      "rango_p50": 265,
+      "rango_p95": 395,
+      "lectura": "no alta"
+    },
+    "Z228": {
+      "robustez_pct": 48.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 218,
+      "rango_p05": 36,
+      "rango_p50": 192,
+      "rango_p95": 368,
+      "lectura": "no alta"
+    },
+    "Z229": {
+      "robustez_pct": 30.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 212,
+      "rango_p05": 145,
+      "rango_p50": 229,
+      "rango_p95": 345,
+      "lectura": "no alta"
+    },
+    "Z230": {
+      "robustez_pct": 13.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 245,
+      "rango_p05": 151,
+      "rango_p50": 244,
+      "rango_p95": 296,
+      "lectura": "no alta"
+    },
+    "Z231": {
+      "robustez_pct": 23.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 270,
+      "rango_p05": 30,
+      "rango_p50": 289,
+      "rango_p95": 435,
+      "lectura": "no alta"
+    },
+    "Z232": {
+      "robustez_pct": 10.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 251,
+      "rango_p05": 169,
+      "rango_p50": 251,
+      "rango_p95": 292,
+      "lectura": "no alta"
+    },
+    "Z233": {
+      "robustez_pct": 20.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 311,
+      "rango_p05": 34,
+      "rango_p50": 286,
+      "rango_p95": 389,
+      "lectura": "no alta"
+    },
+    "Z234": {
+      "robustez_pct": 9.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 256,
+      "rango_p05": 168,
+      "rango_p50": 294,
+      "rango_p95": 381,
+      "lectura": "no alta"
+    },
+    "Z235": {
+      "robustez_pct": 35.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 235,
+      "rango_p05": 69,
+      "rango_p50": 228,
+      "rango_p95": 384,
+      "lectura": "no alta"
+    },
+    "Z236": {
+      "robustez_pct": 35.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 240,
+      "rango_p05": 54,
+      "rango_p50": 227,
+      "rango_p95": 383,
+      "lectura": "no alta"
+    },
+    "Z237": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 231,
+      "rango_p05": 214,
+      "rango_p50": 237,
+      "rango_p95": 277,
+      "lectura": "no alta"
+    },
+    "Z238": {
+      "robustez_pct": 48.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 201,
+      "rango_p05": 112,
+      "rango_p50": 192,
+      "rango_p95": 320,
+      "lectura": "no alta"
+    },
+    "Z239": {
+      "robustez_pct": 28.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 253,
+      "rango_p05": 81,
+      "rango_p50": 236,
+      "rango_p95": 375,
+      "lectura": "no alta"
+    },
+    "Z240": {
+      "robustez_pct": 26.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 196,
+      "rango_p05": 175,
+      "rango_p50": 204,
+      "rango_p95": 257,
+      "lectura": "no alta"
+    },
+    "Z241": {
+      "robustez_pct": 36.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 215,
+      "rango_p05": 137,
+      "rango_p50": 209,
+      "rango_p95": 320,
+      "lectura": "no alta"
+    },
+    "Z242": {
+      "robustez_pct": 26.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 259,
+      "rango_p05": 21,
+      "rango_p50": 252,
+      "rango_p95": 383,
+      "lectura": "no alta"
+    },
+    "Z243": {
+      "robustez_pct": 17.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 272,
+      "rango_p05": 111,
+      "rango_p50": 259,
+      "rango_p95": 373,
+      "lectura": "no alta"
+    },
+    "Z244": {
+      "robustez_pct": 22.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 279,
+      "rango_p05": 30,
+      "rango_p50": 275,
+      "rango_p95": 396,
+      "lectura": "no alta"
+    },
+    "Z245": {
+      "robustez_pct": 7.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 250,
+      "rango_p05": 178,
+      "rango_p50": 247,
+      "rango_p95": 321,
+      "lectura": "no alta"
+    },
+    "Z246": {
+      "robustez_pct": 25.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 224,
+      "rango_p05": 116,
+      "rango_p50": 223,
+      "rango_p95": 271,
+      "lectura": "no alta"
+    },
+    "Z247": {
+      "robustez_pct": 27.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 248,
+      "rango_p05": 20,
+      "rango_p50": 246,
+      "rango_p95": 348,
+      "lectura": "no alta"
+    },
+    "Z248": {
+      "robustez_pct": 4.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 289,
+      "rango_p05": 191,
+      "rango_p50": 283,
+      "rango_p95": 402,
+      "lectura": "no alta"
+    },
+    "Z249": {
+      "robustez_pct": 10.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 303,
+      "rango_p05": 158,
+      "rango_p50": 281,
+      "rango_p95": 388,
+      "lectura": "no alta"
+    },
+    "Z250": {
+      "robustez_pct": 3.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 267,
+      "rango_p05": 199,
+      "rango_p50": 264,
+      "rango_p95": 306,
+      "lectura": "no alta"
+    },
+    "Z251": {
+      "robustez_pct": 30.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 200,
+      "rango_p05": 164,
+      "rango_p50": 215,
+      "rango_p95": 296,
+      "lectura": "no alta"
+    },
+    "Z252": {
+      "robustez_pct": 7.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 223,
+      "rango_p05": 184,
+      "rango_p50": 228,
+      "rango_p95": 314,
+      "lectura": "no alta"
+    },
+    "Z253": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 282,
+      "rango_p05": 247,
+      "rango_p50": 278,
+      "rango_p95": 314,
+      "lectura": "no alta"
+    },
+    "Z254": {
+      "robustez_pct": 0.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 234,
+      "rango_p05": 214,
+      "rango_p50": 251,
+      "rango_p95": 286,
+      "lectura": "no alta"
+    },
+    "Z255": {
+      "robustez_pct": 0.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 238,
+      "rango_p05": 206,
+      "rango_p50": 241,
+      "rango_p95": 284,
+      "lectura": "no alta"
+    },
+    "Z256": {
+      "robustez_pct": 0.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 244,
+      "rango_p05": 209,
+      "rango_p50": 248,
+      "rango_p95": 300,
+      "lectura": "no alta"
+    },
+    "Z257": {
+      "robustez_pct": 14.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 277,
+      "rango_p05": 158,
+      "rango_p50": 261,
+      "rango_p95": 392,
+      "lectura": "no alta"
+    },
+    "Z258": {
+      "robustez_pct": 16.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 226,
+      "rango_p05": 179,
+      "rango_p50": 229,
+      "rango_p95": 315,
+      "lectura": "no alta"
+    },
+    "Z259": {
+      "robustez_pct": 21.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 255,
+      "rango_p05": 134,
+      "rango_p50": 240,
+      "rango_p95": 353,
+      "lectura": "no alta"
+    },
+    "Z260": {
+      "robustez_pct": 45.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 208,
+      "rango_p05": 71,
+      "rango_p50": 200,
+      "rango_p95": 375,
+      "lectura": "no alta"
+    },
+    "Z261": {
+      "robustez_pct": 8.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 243,
+      "rango_p05": 180,
+      "rango_p50": 237,
+      "rango_p95": 293,
+      "lectura": "no alta"
+    },
+    "Z262": {
+      "robustez_pct": 1.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 261,
+      "rango_p05": 208,
+      "rango_p50": 265,
+      "rango_p95": 297,
+      "lectura": "no alta"
+    },
+    "Z263": {
+      "robustez_pct": 13.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 263,
+      "rango_p05": 162,
+      "rango_p50": 251,
+      "rango_p95": 352,
+      "lectura": "no alta"
+    },
+    "Z264": {
+      "robustez_pct": 7.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 312,
+      "rango_p05": 165,
+      "rango_p50": 298,
+      "rango_p95": 346,
+      "lectura": "no alta"
+    },
+    "Z265": {
+      "robustez_pct": 21.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 271,
+      "rango_p05": 96,
+      "rango_p50": 254,
+      "rango_p95": 391,
+      "lectura": "no alta"
+    },
+    "Z266": {
+      "robustez_pct": 14.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 274,
+      "rango_p05": 157,
+      "rango_p50": 264,
+      "rango_p95": 394,
+      "lectura": "no alta"
+    },
+    "Z267": {
+      "robustez_pct": 23.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 249,
+      "rango_p05": 113,
+      "rango_p50": 270,
+      "rango_p95": 405,
+      "lectura": "no alta"
+    },
+    "Z268": {
+      "robustez_pct": 20.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 295,
+      "rango_p05": 34,
+      "rango_p50": 294,
+      "rango_p95": 435,
+      "lectura": "no alta"
+    },
+    "Z269": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 286,
+      "rango_p05": 262,
+      "rango_p50": 288,
+      "rango_p95": 318,
+      "lectura": "no alta"
+    },
+    "Z270": {
+      "robustez_pct": 17.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 229,
+      "rango_p05": 172,
+      "rango_p50": 250,
+      "rango_p95": 357,
+      "lectura": "no alta"
+    },
+    "Z271": {
+      "robustez_pct": 7.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 296,
+      "rango_p05": 178,
+      "rango_p50": 288,
+      "rango_p95": 405,
+      "lectura": "no alta"
+    },
+    "Z272": {
+      "robustez_pct": 0.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 291,
+      "rango_p05": 225,
+      "rango_p50": 317,
+      "rango_p95": 365,
+      "lectura": "no alta"
+    },
+    "Z273": {
+      "robustez_pct": 9.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 284,
+      "rango_p05": 176,
+      "rango_p50": 274,
+      "rango_p95": 398,
+      "lectura": "no alta"
+    },
+    "Z274": {
+      "robustez_pct": 4.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 262,
+      "rango_p05": 195,
+      "rango_p50": 257,
+      "rango_p95": 302,
+      "lectura": "no alta"
+    },
+    "Z275": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 254,
+      "rango_p05": 240,
+      "rango_p50": 267,
+      "rango_p95": 299,
+      "lectura": "no alta"
+    },
+    "Z276": {
+      "robustez_pct": 1.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 242,
+      "rango_p05": 194,
+      "rango_p50": 264,
+      "rango_p95": 351,
+      "lectura": "no alta"
+    },
+    "Z277": {
+      "robustez_pct": 0.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 287,
+      "rango_p05": 201,
+      "rango_p50": 304,
+      "rango_p95": 391,
+      "lectura": "no alta"
+    },
+    "Z278": {
+      "robustez_pct": 20.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 241,
+      "rango_p05": 157,
+      "rango_p50": 226,
+      "rango_p95": 335,
+      "lectura": "no alta"
+    },
+    "Z279": {
+      "robustez_pct": 1.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 318,
+      "rango_p05": 220,
+      "rango_p50": 346,
+      "rango_p95": 417,
+      "lectura": "no alta"
+    },
+    "Z280": {
+      "robustez_pct": 2.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 302,
+      "rango_p05": 208,
+      "rango_p50": 287,
+      "rango_p95": 368,
+      "lectura": "no alta"
+    },
+    "Z281": {
+      "robustez_pct": 1.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 317,
+      "rango_p05": 210,
+      "rango_p50": 335,
+      "rango_p95": 431,
+      "lectura": "no alta"
+    },
+    "Z282": {
+      "robustez_pct": 3.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 310,
+      "rango_p05": 195,
+      "rango_p50": 296,
+      "rango_p95": 405,
+      "lectura": "no alta"
+    },
+    "Z283": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 319,
+      "rango_p05": 239,
+      "rango_p50": 319,
+      "rango_p95": 397,
+      "lectura": "no alta"
+    },
+    "Z284": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 266,
+      "rango_p05": 238,
+      "rango_p50": 272,
+      "rango_p95": 301,
+      "lectura": "no alta"
+    },
+    "Z285": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 258,
+      "rango_p05": 244,
+      "rango_p50": 266,
+      "rango_p95": 283,
+      "lectura": "no alta"
+    },
+    "Z286": {
+      "robustez_pct": 7.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 236,
+      "rango_p05": 184,
+      "rango_p50": 242,
+      "rango_p95": 326,
+      "lectura": "no alta"
+    },
+    "Z287": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 313,
+      "rango_p05": 253,
+      "rango_p50": 311,
+      "rango_p95": 366,
+      "lectura": "no alta"
+    },
+    "Z288": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 265,
+      "rango_p05": 233,
+      "rango_p50": 285,
+      "rango_p95": 321,
+      "lectura": "no alta"
+    },
+    "Z289": {
+      "robustez_pct": 11.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 268,
+      "rango_p05": 159,
+      "rango_p50": 259,
+      "rango_p95": 314,
+      "lectura": "no alta"
+    },
+    "Z290": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 316,
+      "rango_p05": 249,
+      "rango_p50": 317,
+      "rango_p95": 361,
+      "lectura": "no alta"
+    },
+    "Z291": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 278,
+      "rango_p05": 253,
+      "rango_p50": 276,
+      "rango_p95": 305,
+      "lectura": "no alta"
+    },
+    "Z292": {
+      "robustez_pct": 0.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 305,
+      "rango_p05": 231,
+      "rango_p50": 299,
+      "rango_p95": 333,
+      "lectura": "no alta"
+    },
+    "Z293": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 299,
+      "rango_p05": 271,
+      "rango_p50": 301,
+      "rango_p95": 334,
+      "lectura": "no alta"
+    },
+    "Z294": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 340,
+      "rango_p05": 265,
+      "rango_p50": 344,
+      "rango_p95": 425,
+      "lectura": "no alta"
+    },
+    "Z295": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 321,
+      "rango_p05": 260,
+      "rango_p50": 308,
+      "rango_p95": 336,
+      "lectura": "no alta"
+    },
+    "Z296": {
+      "robustez_pct": 1.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 293,
+      "rango_p05": 218,
+      "rango_p50": 285,
+      "rango_p95": 310,
+      "lectura": "no alta"
+    },
+    "Z297": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 307,
+      "rango_p05": 252,
+      "rango_p50": 300,
+      "rango_p95": 348,
+      "lectura": "no alta"
+    },
+    "Z298": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 290,
+      "rango_p05": 233,
+      "rango_p50": 281,
+      "rango_p95": 340,
+      "lectura": "no alta"
+    },
+    "Z299": {
+      "robustez_pct": 15.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 260,
+      "rango_p05": 103,
+      "rango_p50": 346,
+      "rango_p95": 454,
+      "lectura": "no alta"
+    },
+    "Z300": {
+      "robustez_pct": 2.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 285,
+      "rango_p05": 203,
+      "rango_p50": 275,
+      "rango_p95": 312,
+      "lectura": "no alta"
+    },
+    "Z301": {
+      "robustez_pct": 16.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 329,
+      "rango_p05": 45,
+      "rango_p50": 304,
+      "rango_p95": 377,
+      "lectura": "no alta"
+    },
+    "Z302": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 314,
+      "rango_p05": 257,
+      "rango_p50": 315,
+      "rango_p95": 359,
+      "lectura": "no alta"
+    },
+    "Z303": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 304,
+      "rango_p05": 254,
+      "rango_p50": 289,
+      "rango_p95": 334,
+      "lectura": "no alta"
+    },
+    "Z304": {
+      "robustez_pct": 18.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 309,
+      "rango_p05": 39,
+      "rango_p50": 301,
+      "rango_p95": 420,
+      "lectura": "no alta"
+    },
+    "Z305": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 264,
+      "rango_p05": 208,
+      "rango_p50": 274,
+      "rango_p95": 364,
+      "lectura": "no alta"
+    },
+    "Z306": {
+      "robustez_pct": 16.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 257,
+      "rango_p05": 156,
+      "rango_p50": 290,
+      "rango_p95": 411,
+      "lectura": "no alta"
+    },
+    "Z307": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 273,
+      "rango_p05": 212,
+      "rango_p50": 286,
+      "rango_p95": 361,
+      "lectura": "no alta"
+    },
+    "Z308": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 288,
+      "rango_p05": 235,
+      "rango_p50": 302,
+      "rango_p95": 367,
+      "lectura": "no alta"
+    },
+    "Z309": {
+      "robustez_pct": 5.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 276,
+      "rango_p05": 188,
+      "rango_p50": 269,
+      "rango_p95": 379,
+      "lectura": "no alta"
+    },
+    "Z310": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 300,
+      "rango_p05": 234,
+      "rango_p50": 297,
+      "rango_p95": 361,
+      "lectura": "no alta"
+    },
+    "Z311": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 308,
+      "rango_p05": 285,
+      "rango_p50": 302,
+      "rango_p95": 317,
+      "lectura": "no alta"
+    },
+    "Z312": {
+      "robustez_pct": 23.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 275,
+      "rango_p05": 144,
+      "rango_p50": 248,
+      "rango_p95": 407,
+      "lectura": "no alta"
+    },
+    "Z313": {
+      "robustez_pct": 18.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 281,
+      "rango_p05": 153,
+      "rango_p50": 270,
+      "rango_p95": 414,
+      "lectura": "no alta"
+    },
+    "Z314": {
+      "robustez_pct": 7.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 315,
+      "rango_p05": 174,
+      "rango_p50": 300,
+      "rango_p95": 406,
+      "lectura": "no alta"
+    },
+    "Z315": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 280,
+      "rango_p05": 212,
+      "rango_p50": 271,
+      "rango_p95": 344,
+      "lectura": "no alta"
+    },
+    "Z316": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 365,
+      "rango_p05": 287,
+      "rango_p50": 360,
+      "rango_p95": 428,
+      "lectura": "no alta"
+    },
+    "Z317": {
+      "robustez_pct": 11.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 283,
+      "rango_p05": 176,
+      "rango_p50": 275,
+      "rango_p95": 396,
+      "lectura": "no alta"
+    },
+    "Z318": {
+      "robustez_pct": 9.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 301,
+      "rango_p05": 178,
+      "rango_p50": 317,
+      "rango_p95": 426,
+      "lectura": "no alta"
+    },
+    "Z319": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 297,
+      "rango_p05": 230,
+      "rango_p50": 286,
+      "rango_p95": 346,
+      "lectura": "no alta"
+    },
+    "Z320": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 292,
+      "rango_p05": 220,
+      "rango_p50": 307,
+      "rango_p95": 379,
+      "lectura": "no alta"
+    },
+    "Z321": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 341,
+      "rango_p05": 253,
+      "rango_p50": 333,
+      "rango_p95": 419,
+      "lectura": "no alta"
+    },
+    "Z322": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 335,
+      "rango_p05": 281,
+      "rango_p50": 326,
+      "rango_p95": 361,
+      "lectura": "no alta"
+    },
+    "Z323": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 306,
+      "rango_p05": 238,
+      "rango_p50": 290,
+      "rango_p95": 346,
+      "lectura": "no alta"
+    },
+    "Z324": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 332,
+      "rango_p05": 273,
+      "rango_p50": 343,
+      "rango_p95": 378,
+      "lectura": "no alta"
+    },
+    "Z325": {
+      "robustez_pct": 1.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 330,
+      "rango_p05": 214,
+      "rango_p50": 315,
+      "rango_p95": 412,
+      "lectura": "no alta"
+    },
+    "Z326": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 327,
+      "rango_p05": 283,
+      "rango_p50": 318,
+      "rango_p95": 381,
+      "lectura": "no alta"
+    },
+    "Z327": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 336,
+      "rango_p05": 263,
+      "rango_p50": 321,
+      "rango_p95": 348,
+      "lectura": "no alta"
+    },
+    "Z328": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 352,
+      "rango_p05": 275,
+      "rango_p50": 347,
+      "rango_p95": 424,
+      "lectura": "no alta"
+    },
+    "Z329": {
+      "robustez_pct": 0.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 325,
+      "rango_p05": 217,
+      "rango_p50": 322,
+      "rango_p95": 416,
+      "lectura": "no alta"
+    },
+    "Z330": {
+      "robustez_pct": 15.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 294,
+      "rango_p05": 163,
+      "rango_p50": 264,
+      "rango_p95": 411,
+      "lectura": "no alta"
+    },
+    "Z331": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 322,
+      "rango_p05": 280,
+      "rango_p50": 315,
+      "rango_p95": 340,
+      "lectura": "no alta"
+    },
+    "Z332": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 323,
+      "rango_p05": 257,
+      "rango_p50": 327,
+      "rango_p95": 377,
+      "lectura": "no alta"
+    },
+    "Z333": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 351,
+      "rango_p05": 260,
+      "rango_p50": 331,
+      "rango_p95": 371,
+      "lectura": "no alta"
+    },
+    "Z334": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 364,
+      "rango_p05": 275,
+      "rango_p50": 376,
+      "rango_p95": 451,
+      "lectura": "no alta"
+    },
+    "Z335": {
+      "robustez_pct": 11.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 298,
+      "rango_p05": 166,
+      "rango_p50": 328,
+      "rango_p95": 444,
+      "lectura": "no alta"
+    },
+    "Z336": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 333,
+      "rango_p05": 275,
+      "rango_p50": 334,
+      "rango_p95": 382,
+      "lectura": "no alta"
+    },
+    "Z337": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 324,
+      "rango_p05": 231,
+      "rango_p50": 319,
+      "rango_p95": 383,
+      "lectura": "no alta"
+    },
+    "Z338": {
+      "robustez_pct": 0.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 337,
+      "rango_p05": 221,
+      "rango_p50": 307,
+      "rango_p95": 400,
+      "lectura": "no alta"
+    },
+    "Z339": {
+      "robustez_pct": 0.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 358,
+      "rango_p05": 239,
+      "rango_p50": 343,
+      "rango_p95": 416,
+      "lectura": "no alta"
+    },
+    "Z340": {
+      "robustez_pct": 12.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 346,
+      "rango_p05": 67,
+      "rango_p50": 343,
+      "rango_p95": 435,
+      "lectura": "no alta"
+    },
+    "Z341": {
+      "robustez_pct": 0.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 326,
+      "rango_p05": 203,
+      "rango_p50": 329,
+      "rango_p95": 431,
+      "lectura": "no alta"
+    },
+    "Z342": {
+      "robustez_pct": 1.6,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 344,
+      "rango_p05": 221,
+      "rango_p50": 335,
+      "rango_p95": 422,
+      "lectura": "no alta"
+    },
+    "Z343": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 362,
+      "rango_p05": 293,
+      "rango_p50": 354,
+      "rango_p95": 411,
+      "lectura": "no alta"
+    },
+    "Z344": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 381,
+      "rango_p05": 324,
+      "rango_p50": 375,
+      "rango_p95": 412,
+      "lectura": "no alta"
+    },
+    "Z345": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 343,
+      "rango_p05": 257,
+      "rango_p50": 352,
+      "rango_p95": 433,
+      "lectura": "no alta"
+    },
+    "Z346": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 356,
+      "rango_p05": 271,
+      "rango_p50": 364,
+      "rango_p95": 431,
+      "lectura": "no alta"
+    },
+    "Z347": {
+      "robustez_pct": 18.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 328,
+      "rango_p05": 38,
+      "rango_p50": 292,
+      "rango_p95": 380,
+      "lectura": "no alta"
+    },
+    "Z348": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 367,
+      "rango_p05": 273,
+      "rango_p50": 354,
+      "rango_p95": 381,
+      "lectura": "no alta"
+    },
+    "Z349": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 360,
+      "rango_p05": 320,
+      "rango_p50": 351,
+      "rango_p95": 370,
+      "lectura": "no alta"
+    },
+    "Z350": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 331,
+      "rango_p05": 243,
+      "rango_p50": 339,
+      "rango_p95": 400,
+      "lectura": "no alta"
+    },
+    "Z351": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 366,
+      "rango_p05": 303,
+      "rango_p50": 357,
+      "rango_p95": 388,
+      "lectura": "no alta"
+    },
+    "Z352": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 320,
+      "rango_p05": 236,
+      "rango_p50": 310,
+      "rango_p95": 383,
+      "lectura": "no alta"
+    },
+    "Z353": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 345,
+      "rango_p05": 299,
+      "rango_p50": 330,
+      "rango_p95": 369,
+      "lectura": "no alta"
+    },
+    "Z354": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 376,
+      "rango_p05": 285,
+      "rango_p50": 362,
+      "rango_p95": 391,
+      "lectura": "no alta"
+    },
+    "Z355": {
+      "robustez_pct": 0.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 388,
+      "rango_p05": 254,
+      "rango_p50": 374,
+      "rango_p95": 435,
+      "lectura": "no alta"
+    },
+    "Z356": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 361,
+      "rango_p05": 261,
+      "rango_p50": 376,
+      "rango_p95": 460,
+      "lectura": "no alta"
+    },
+    "Z357": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 383,
+      "rango_p05": 340,
+      "rango_p50": 383,
+      "rango_p95": 406,
+      "lectura": "no alta"
+    },
+    "Z358": {
+      "robustez_pct": 0.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 339,
+      "rango_p05": 229,
+      "rango_p50": 314,
+      "rango_p95": 378,
+      "lectura": "no alta"
+    },
+    "Z359": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 342,
+      "rango_p05": 275,
+      "rango_p50": 343,
+      "rango_p95": 407,
+      "lectura": "no alta"
+    },
+    "Z360": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 385,
+      "rango_p05": 353,
+      "rango_p50": 386,
+      "rango_p95": 410,
+      "lectura": "no alta"
+    },
+    "Z361": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 363,
+      "rango_p05": 308,
+      "rango_p50": 349,
+      "rango_p95": 369,
+      "lectura": "no alta"
+    },
+    "Z362": {
+      "robustez_pct": 1.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 392,
+      "rango_p05": 231,
+      "rango_p50": 381,
+      "rango_p95": 434,
+      "lectura": "no alta"
+    },
+    "Z363": {
+      "robustez_pct": 0.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 391,
+      "rango_p05": 261,
+      "rango_p50": 382,
+      "rango_p95": 440,
+      "lectura": "no alta"
+    },
+    "Z364": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 334,
+      "rango_p05": 222,
+      "rango_p50": 319,
+      "rango_p95": 410,
+      "lectura": "no alta"
+    },
+    "Z365": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 349,
+      "rango_p05": 293,
+      "rango_p50": 358,
+      "rango_p95": 404,
+      "lectura": "no alta"
+    },
+    "Z366": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 348,
+      "rango_p05": 276,
+      "rango_p50": 327,
+      "rango_p95": 379,
+      "lectura": "no alta"
+    },
+    "Z367": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 347,
+      "rango_p05": 245,
+      "rango_p50": 344,
+      "rango_p95": 413,
+      "lectura": "no alta"
+    },
+    "Z368": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 393,
+      "rango_p05": 324,
+      "rango_p50": 396,
+      "rango_p95": 450,
+      "lectura": "no alta"
+    },
+    "Z369": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 401,
+      "rango_p05": 339,
+      "rango_p50": 405,
+      "rango_p95": 455,
+      "lectura": "no alta"
+    },
+    "Z370": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 397,
+      "rango_p05": 336,
+      "rango_p50": 399,
+      "rango_p95": 450,
+      "lectura": "no alta"
+    },
+    "Z371": {
+      "robustez_pct": 6.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 338,
+      "rango_p05": 184,
+      "rango_p50": 336,
+      "rango_p95": 446,
+      "lectura": "no alta"
+    },
+    "Z372": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 350,
+      "rango_p05": 267,
+      "rango_p50": 327,
+      "rango_p95": 380,
+      "lectura": "no alta"
+    },
+    "Z373": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 390,
+      "rango_p05": 323,
+      "rango_p50": 386,
+      "rango_p95": 440,
+      "lectura": "no alta"
+    },
+    "Z374": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "media",
+      "rango_base": 389,
+      "rango_p05": 325,
+      "rango_p50": 405,
+      "rango_p95": 451,
+      "lectura": "no alta"
+    },
+    "Z375": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 354,
+      "rango_p05": 252,
+      "rango_p50": 351,
+      "rango_p95": 415,
+      "lectura": "no alta"
+    },
+    "Z376": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 420,
+      "rango_p05": 360,
+      "rango_p50": 432,
+      "rango_p95": 486,
+      "lectura": "no alta"
+    },
+    "Z377": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 359,
+      "rango_p05": 264,
+      "rango_p50": 368,
+      "rango_p95": 449,
+      "lectura": "no alta"
+    },
+    "Z378": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 355,
+      "rango_p05": 286,
+      "rango_p50": 338,
+      "rango_p95": 385,
+      "lectura": "no alta"
+    },
+    "Z379": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 380,
+      "rango_p05": 336,
+      "rango_p50": 374,
+      "rango_p95": 417,
+      "lectura": "no alta"
+    },
+    "Z380": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 372,
+      "rango_p05": 277,
+      "rango_p50": 350,
+      "rango_p95": 420,
+      "lectura": "no alta"
+    },
+    "Z381": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 369,
+      "rango_p05": 291,
+      "rango_p50": 374,
+      "rango_p95": 440,
+      "lectura": "no alta"
+    },
+    "Z382": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 357,
+      "rango_p05": 254,
+      "rango_p50": 355,
+      "rango_p95": 411,
+      "lectura": "no alta"
+    },
+    "Z383": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 375,
+      "rango_p05": 331,
+      "rango_p50": 362,
+      "rango_p95": 386,
+      "lectura": "no alta"
+    },
+    "Z384": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 395,
+      "rango_p05": 335,
+      "rango_p50": 394,
+      "rango_p95": 444,
+      "lectura": "no alta"
+    },
+    "Z385": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 382,
+      "rango_p05": 308,
+      "rango_p50": 374,
+      "rango_p95": 433,
+      "lectura": "no alta"
+    },
+    "Z386": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 370,
+      "rango_p05": 279,
+      "rango_p50": 358,
+      "rango_p95": 399,
+      "lectura": "no alta"
+    },
+    "Z387": {
+      "robustez_pct": 4.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 353,
+      "rango_p05": 189,
+      "rango_p50": 338,
+      "rango_p95": 453,
+      "lectura": "no alta"
+    },
+    "Z388": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 368,
+      "rango_p05": 268,
+      "rango_p50": 370,
+      "rango_p95": 431,
+      "lectura": "no alta"
+    },
+    "Z389": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 406,
+      "rango_p05": 335,
+      "rango_p50": 404,
+      "rango_p95": 451,
+      "lectura": "no alta"
+    },
+    "Z390": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 374,
+      "rango_p05": 303,
+      "rango_p50": 360,
+      "rango_p95": 405,
+      "lectura": "no alta"
+    },
+    "Z391": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 373,
+      "rango_p05": 323,
+      "rango_p50": 357,
+      "rango_p95": 393,
+      "lectura": "no alta"
+    },
+    "Z392": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 371,
+      "rango_p05": 255,
+      "rango_p50": 341,
+      "rango_p95": 415,
+      "lectura": "no alta"
+    },
+    "Z393": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 394,
+      "rango_p05": 333,
+      "rango_p50": 398,
+      "rango_p95": 452,
+      "lectura": "no alta"
+    },
+    "Z394": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 377,
+      "rango_p05": 262,
+      "rango_p50": 387,
+      "rango_p95": 438,
+      "lectura": "no alta"
+    },
+    "Z395": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 386,
+      "rango_p05": 319,
+      "rango_p50": 379,
+      "rango_p95": 407,
+      "lectura": "no alta"
+    },
+    "Z396": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 402,
+      "rango_p05": 340,
+      "rango_p50": 395,
+      "rango_p95": 440,
+      "lectura": "no alta"
+    },
+    "Z397": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 424,
+      "rango_p05": 386,
+      "rango_p50": 424,
+      "rango_p95": 462,
+      "lectura": "no alta"
+    },
+    "Z398": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 379,
+      "rango_p05": 294,
+      "rango_p50": 377,
+      "rango_p95": 423,
+      "lectura": "no alta"
+    },
+    "Z399": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 408,
+      "rango_p05": 376,
+      "rango_p50": 410,
+      "rango_p95": 445,
+      "lectura": "no alta"
+    },
+    "Z400": {
+      "robustez_pct": 1.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 378,
+      "rango_p05": 235,
+      "rango_p50": 349,
+      "rango_p95": 428,
+      "lectura": "no alta"
+    },
+    "Z401": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 400,
+      "rango_p05": 287,
+      "rango_p50": 392,
+      "rango_p95": 443,
+      "lectura": "no alta"
+    },
+    "Z402": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 387,
+      "rango_p05": 335,
+      "rango_p50": 376,
+      "rango_p95": 399,
+      "lectura": "no alta"
+    },
+    "Z403": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 396,
+      "rango_p05": 337,
+      "rango_p50": 401,
+      "rango_p95": 451,
+      "lectura": "no alta"
+    },
+    "Z404": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 384,
+      "rango_p05": 285,
+      "rango_p50": 390,
+      "rango_p95": 427,
+      "lectura": "no alta"
+    },
+    "Z405": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 398,
+      "rango_p05": 352,
+      "rango_p50": 397,
+      "rango_p95": 414,
+      "lectura": "no alta"
+    },
+    "Z406": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 404,
+      "rango_p05": 330,
+      "rango_p50": 405,
+      "rango_p95": 429,
+      "lectura": "no alta"
+    },
+    "Z407": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 416,
+      "rango_p05": 348,
+      "rango_p50": 417,
+      "rango_p95": 438,
+      "lectura": "no alta"
+    },
+    "Z408": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 427,
+      "rango_p05": 307,
+      "rango_p50": 413,
+      "rango_p95": 447,
+      "lectura": "no alta"
+    },
+    "Z409": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 409,
+      "rango_p05": 361,
+      "rango_p50": 410,
+      "rango_p95": 453,
+      "lectura": "no alta"
+    },
+    "Z410": {
+      "robustez_pct": 9.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 403,
+      "rango_p05": 107,
+      "rango_p50": 377,
+      "rango_p95": 454,
+      "lectura": "no alta"
+    },
+    "Z411": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 437,
+      "rango_p05": 398,
+      "rango_p50": 445,
+      "rango_p95": 477,
+      "lectura": "no alta"
+    },
+    "Z412": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 428,
+      "rango_p05": 395,
+      "rango_p50": 429,
+      "rango_p95": 465,
+      "lectura": "no alta"
+    },
+    "Z413": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 410,
+      "rango_p05": 319,
+      "rango_p50": 428,
+      "rango_p95": 508,
+      "lectura": "no alta"
+    },
+    "Z414": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 412,
+      "rango_p05": 338,
+      "rango_p50": 404,
+      "rango_p95": 449,
+      "lectura": "no alta"
+    },
+    "Z415": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 422,
+      "rango_p05": 391,
+      "rango_p50": 425,
+      "rango_p95": 452,
+      "lectura": "no alta"
+    },
+    "Z416": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 399,
+      "rango_p05": 289,
+      "rango_p50": 393,
+      "rango_p95": 440,
+      "lectura": "no alta"
+    },
+    "Z417": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 423,
+      "rango_p05": 361,
+      "rango_p50": 418,
+      "rango_p95": 457,
+      "lectura": "no alta"
+    },
+    "Z418": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 417,
+      "rango_p05": 368,
+      "rango_p50": 413,
+      "rango_p95": 432,
+      "lectura": "no alta"
+    },
+    "Z419": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 407,
+      "rango_p05": 347,
+      "rango_p50": 414,
+      "rango_p95": 438,
+      "lectura": "no alta"
+    },
+    "Z420": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 412,
+      "rango_p05": 339,
+      "rango_p50": 405,
+      "rango_p95": 450,
+      "lectura": "no alta"
+    },
+    "Z421": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 419,
+      "rango_p05": 308,
+      "rango_p50": 405,
+      "rango_p95": 444,
+      "lectura": "no alta"
+    },
+    "Z422": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 431,
+      "rango_p05": 339,
+      "rango_p50": 431,
+      "rango_p95": 453,
+      "lectura": "no alta"
+    },
+    "Z423": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 428,
+      "rango_p05": 396,
+      "rango_p50": 430,
+      "rango_p95": 466,
+      "lectura": "no alta"
+    },
+    "Z424": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 411,
+      "rango_p05": 363,
+      "rango_p50": 421,
+      "rango_p95": 446,
+      "lectura": "no alta"
+    },
+    "Z425": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 440,
+      "rango_p05": 413,
+      "rango_p50": 441,
+      "rango_p95": 473,
+      "lectura": "no alta"
+    },
+    "Z426": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 442,
+      "rango_p05": 422,
+      "rango_p50": 443,
+      "rango_p95": 463,
+      "lectura": "no alta"
+    },
+    "Z427": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 445,
+      "rango_p05": 420,
+      "rango_p50": 452,
+      "rango_p95": 486,
+      "lectura": "no alta"
+    },
+    "Z428": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 418,
+      "rango_p05": 298,
+      "rango_p50": 428,
+      "rango_p95": 462,
+      "lectura": "no alta"
+    },
+    "Z429": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 415,
+      "rango_p05": 372,
+      "rango_p50": 419,
+      "rango_p95": 445,
+      "lectura": "no alta"
+    },
+    "Z430": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 421,
+      "rango_p05": 362,
+      "rango_p50": 418,
+      "rango_p95": 439,
+      "lectura": "no alta"
+    },
+    "Z431": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 435,
+      "rango_p05": 375,
+      "rango_p50": 428,
+      "rango_p95": 446,
+      "lectura": "no alta"
+    },
+    "Z432": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 425,
+      "rango_p05": 374,
+      "rango_p50": 427,
+      "rango_p95": 468,
+      "lectura": "no alta"
+    },
+    "Z433": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 436,
+      "rango_p05": 382,
+      "rango_p50": 431,
+      "rango_p95": 464,
+      "lectura": "no alta"
+    },
+    "Z434": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 434,
+      "rango_p05": 398,
+      "rango_p50": 441,
+      "rango_p95": 481,
+      "lectura": "no alta"
+    },
+    "Z435": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 432,
+      "rango_p05": 382,
+      "rango_p50": 427,
+      "rango_p95": 441,
+      "lectura": "no alta"
+    },
+    "Z436": {
+      "robustez_pct": 0.3,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 414,
+      "rango_p05": 277,
+      "rango_p50": 397,
+      "rango_p95": 448,
+      "lectura": "no alta"
+    },
+    "Z437": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 405,
+      "rango_p05": 336,
+      "rango_p50": 407,
+      "rango_p95": 452,
+      "lectura": "no alta"
+    },
+    "Z438": {
+      "robustez_pct": 7.4,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 433,
+      "rango_p05": 131,
+      "rango_p50": 412,
+      "rango_p95": 458,
+      "lectura": "no alta"
+    },
+    "Z439": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 426,
+      "rango_p05": 336,
+      "rango_p50": 427,
+      "rango_p95": 457,
+      "lectura": "no alta"
+    },
+    "Z440": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 444,
+      "rango_p05": 416,
+      "rango_p50": 446,
+      "rango_p95": 478,
+      "lectura": "no alta"
+    },
+    "Z441": {
+      "robustez_pct": 6.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 441,
+      "rango_p05": 146,
+      "rango_p50": 431,
+      "rango_p95": 465,
+      "lectura": "no alta"
+    },
+    "Z442": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 451,
+      "rango_p05": 427,
+      "rango_p50": 459,
+      "rango_p95": 496,
+      "lectura": "no alta"
+    },
+    "Z443": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 447,
+      "rango_p05": 378,
+      "rango_p50": 445,
+      "rango_p95": 475,
+      "lectura": "no alta"
+    },
+    "Z444": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 430,
+      "rango_p05": 274,
+      "rango_p50": 424,
+      "rango_p95": 467,
+      "lectura": "no alta"
+    },
+    "Z445": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 452,
+      "rango_p05": 435,
+      "rango_p50": 454,
+      "rango_p95": 475,
+      "lectura": "no alta"
+    },
+    "Z446": {
+      "robustez_pct": 5.2,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 454,
+      "rango_p05": 181,
+      "rango_p50": 454,
+      "rango_p95": 495,
+      "lectura": "no alta"
+    },
+    "Z447": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 448,
+      "rango_p05": 392,
+      "rango_p50": 446,
+      "rango_p95": 460,
+      "lectura": "no alta"
+    },
+    "Z448": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 449,
+      "rango_p05": 419,
+      "rango_p50": 452,
+      "rango_p95": 461,
+      "lectura": "no alta"
+    },
+    "Z449": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 462,
+      "rango_p05": 429,
+      "rango_p50": 470,
+      "rango_p95": 525,
+      "lectura": "no alta"
+    },
+    "Z450": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 458,
+      "rango_p05": 440,
+      "rango_p50": 464,
+      "rango_p95": 495,
+      "lectura": "no alta"
+    },
+    "Z451": {
+      "robustez_pct": 6.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 450,
+      "rango_p05": 155,
+      "rango_p50": 443,
+      "rango_p95": 476,
+      "lectura": "no alta"
+    },
+    "Z452": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 455,
+      "rango_p05": 442,
+      "rango_p50": 457,
+      "rango_p95": 473,
+      "lectura": "no alta"
+    },
+    "Z453": {
+      "robustez_pct": 6.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 439,
+      "rango_p05": 140,
+      "rango_p50": 428,
+      "rango_p95": 477,
+      "lectura": "no alta"
+    },
+    "Z454": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 457,
+      "rango_p05": 377,
+      "rango_p50": 452,
+      "rango_p95": 476,
+      "lectura": "no alta"
+    },
+    "Z455": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 446,
+      "rango_p05": 384,
+      "rango_p50": 442,
+      "rango_p95": 458,
+      "lectura": "no alta"
+    },
+    "Z456": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 438,
+      "rango_p05": 401,
+      "rango_p50": 448,
+      "rango_p95": 481,
+      "lectura": "no alta"
+    },
+    "Z457": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 460,
+      "rango_p05": 441,
+      "rango_p50": 460,
+      "rango_p95": 483,
+      "lectura": "no alta"
+    },
+    "Z458": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 463,
+      "rango_p05": 431,
+      "rango_p50": 460,
+      "rango_p95": 469,
+      "lectura": "no alta"
+    },
+    "Z459": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 453,
+      "rango_p05": 279,
+      "rango_p50": 462,
+      "rango_p95": 488,
+      "lectura": "no alta"
+    },
+    "Z460": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 459,
+      "rango_p05": 440,
+      "rango_p50": 467,
+      "rango_p95": 495,
+      "lectura": "no alta"
+    },
+    "Z461": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 461,
+      "rango_p05": 277,
+      "rango_p50": 464,
+      "rango_p95": 490,
+      "lectura": "no alta"
+    },
+    "Z462": {
+      "robustez_pct": 5.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 468,
+      "rango_p05": 188,
+      "rango_p50": 458,
+      "rango_p95": 482,
+      "lectura": "no alta"
+    },
+    "Z463": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 474,
+      "rango_p05": 457,
+      "rango_p50": 471,
+      "rango_p95": 489,
+      "lectura": "no alta"
+    },
+    "Z464": {
+      "robustez_pct": 4.8,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 464,
+      "rango_p05": 194,
+      "rango_p50": 460,
+      "rango_p95": 507,
+      "lectura": "no alta"
+    },
+    "Z465": {
+      "robustez_pct": 4.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 475,
+      "rango_p05": 205,
+      "rango_p50": 466,
+      "rango_p95": 491,
+      "lectura": "no alta"
+    },
+    "Z466": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 456,
+      "rango_p05": 333,
+      "rango_p50": 451,
+      "rango_p95": 473,
+      "lectura": "no alta"
+    },
+    "Z467": {
+      "robustez_pct": 11.5,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 443,
+      "rango_p05": 143,
+      "rango_p50": 422,
+      "rango_p95": 511,
+      "lectura": "no alta"
+    },
+    "Z468": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 470,
+      "rango_p05": 454,
+      "rango_p50": 468,
+      "rango_p95": 488,
+      "lectura": "no alta"
+    },
+    "Z469": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 471,
+      "rango_p05": 461,
+      "rango_p50": 472,
+      "rango_p95": 491,
+      "lectura": "no alta"
+    },
+    "Z470": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 466,
+      "rango_p05": 435,
+      "rango_p50": 461,
+      "rango_p95": 484,
+      "lectura": "no alta"
+    },
+    "Z471": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 465,
+      "rango_p05": 361,
+      "rango_p50": 460,
+      "rango_p95": 482,
+      "lectura": "no alta"
+    },
+    "Z472": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 469,
+      "rango_p05": 405,
+      "rango_p50": 463,
+      "rango_p95": 486,
+      "lectura": "no alta"
+    },
+    "Z473": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 467,
+      "rango_p05": 373,
+      "rango_p50": 468,
+      "rango_p95": 497,
+      "lectura": "no alta"
+    },
+    "Z474": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 477,
+      "rango_p05": 456,
+      "rango_p50": 472,
+      "rango_p95": 490,
+      "lectura": "no alta"
+    },
+    "Z475": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 478,
+      "rango_p05": 463,
+      "rango_p50": 475,
+      "rango_p95": 492,
+      "lectura": "no alta"
+    },
+    "Z476": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 480,
+      "rango_p05": 432,
+      "rango_p50": 479,
+      "rango_p95": 484,
+      "lectura": "no alta"
+    },
+    "Z477": {
+      "robustez_pct": 0.9,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 476,
+      "rango_p05": 221,
+      "rango_p50": 468,
+      "rango_p95": 519,
+      "lectura": "no alta"
+    },
+    "Z478": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 485,
+      "rango_p05": 473,
+      "rango_p50": 485,
+      "rango_p95": 497,
+      "lectura": "no alta"
+    },
+    "Z479": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 482,
+      "rango_p05": 472,
+      "rango_p50": 483,
+      "rango_p95": 499,
+      "lectura": "no alta"
+    },
+    "Z480": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 484,
+      "rango_p05": 405,
+      "rango_p50": 488,
+      "rango_p95": 508,
+      "lectura": "no alta"
+    },
+    "Z481": {
+      "robustez_pct": 3.7,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 479,
+      "rango_p05": 232,
+      "rango_p50": 478,
+      "rango_p95": 509,
+      "lectura": "no alta"
+    },
+    "Z482": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 481,
+      "rango_p05": 463,
+      "rango_p50": 478,
+      "rango_p95": 495,
+      "lectura": "no alta"
+    },
+    "Z483": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 473,
+      "rango_p05": 249,
+      "rango_p50": 469,
+      "rango_p95": 510,
+      "lectura": "no alta"
+    },
+    "Z484": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 488,
+      "rango_p05": 475,
+      "rango_p50": 487,
+      "rango_p95": 502,
+      "lectura": "no alta"
+    },
+    "Z485": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 472,
+      "rango_p05": 287,
+      "rango_p50": 462,
+      "rango_p95": 501,
+      "lectura": "no alta"
+    },
+    "Z486": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 489,
+      "rango_p05": 437,
+      "rango_p50": 484,
+      "rango_p95": 503,
+      "lectura": "no alta"
+    },
+    "Z487": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 495,
+      "rango_p05": 484,
+      "rango_p50": 495,
+      "rango_p95": 509,
+      "lectura": "no alta"
+    },
+    "Z488": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 486,
+      "rango_p05": 461,
+      "rango_p50": 483,
+      "rango_p95": 499,
+      "lectura": "no alta"
+    },
+    "Z489": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 492,
+      "rango_p05": 474,
+      "rango_p50": 496,
+      "rango_p95": 530,
+      "lectura": "no alta"
+    },
+    "Z490": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 510,
+      "rango_p05": 493,
+      "rango_p50": 515,
+      "rango_p95": 546,
+      "lectura": "no alta"
+    },
+    "Z491": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 487,
+      "rango_p05": 474,
+      "rango_p50": 486,
+      "rango_p95": 501,
+      "lectura": "no alta"
+    },
+    "Z492": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 498,
+      "rango_p05": 486,
+      "rango_p50": 505,
+      "rango_p95": 523,
+      "lectura": "no alta"
+    },
+    "Z493": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 504,
+      "rango_p05": 481,
+      "rango_p50": 502,
+      "rango_p95": 505,
+      "lectura": "no alta"
+    },
+    "Z494": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 493,
+      "rango_p05": 333,
+      "rango_p50": 496,
+      "rango_p95": 519,
+      "lectura": "no alta"
+    },
+    "Z495": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 499,
+      "rango_p05": 490,
+      "rango_p50": 500,
+      "rango_p95": 519,
+      "lectura": "no alta"
+    },
+    "Z496": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 497,
+      "rango_p05": 486,
+      "rango_p50": 496,
+      "rango_p95": 509,
+      "lectura": "no alta"
+    },
+    "Z497": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 490,
+      "rango_p05": 445,
+      "rango_p50": 486,
+      "rango_p95": 504,
+      "lectura": "no alta"
+    },
+    "Z498": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 505,
+      "rango_p05": 494,
+      "rango_p50": 510,
+      "rango_p95": 519,
+      "lectura": "no alta"
+    },
+    "Z499": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 496,
+      "rango_p05": 484,
+      "rango_p50": 495,
+      "rango_p95": 508,
+      "lectura": "no alta"
+    },
+    "Z500": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 502,
+      "rango_p05": 493,
+      "rango_p50": 505,
+      "rango_p95": 514,
+      "lectura": "no alta"
+    },
+    "Z501": {
+      "robustez_pct": 1.1,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 483,
+      "rango_p05": 237,
+      "rango_p50": 472,
+      "rango_p95": 526,
+      "lectura": "no alta"
+    },
+    "Z502": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 509,
+      "rango_p05": 498,
+      "rango_p50": 509,
+      "rango_p95": 518,
+      "lectura": "no alta"
+    },
+    "Z503": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 501,
+      "rango_p05": 489,
+      "rango_p50": 501,
+      "rango_p95": 504,
+      "lectura": "no alta"
+    },
+    "Z504": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 511,
+      "rango_p05": 500,
+      "rango_p50": 515,
+      "rango_p95": 534,
+      "lectura": "no alta"
+    },
+    "Z505": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 503,
+      "rango_p05": 493,
+      "rango_p50": 504,
+      "rango_p95": 515,
+      "lectura": "no alta"
+    },
+    "Z506": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 506,
+      "rango_p05": 318,
+      "rango_p50": 496,
+      "rango_p95": 539,
+      "lectura": "no alta"
+    },
+    "Z507": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 494,
+      "rango_p05": 454,
+      "rango_p50": 495,
+      "rango_p95": 499,
+      "lectura": "no alta"
+    },
+    "Z508": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 491,
+      "rango_p05": 476,
+      "rango_p50": 496,
+      "rango_p95": 521,
+      "lectura": "no alta"
+    },
+    "Z509": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 508,
+      "rango_p05": 500,
+      "rango_p50": 508,
+      "rango_p95": 517,
+      "lectura": "no alta"
+    },
+    "Z510": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 500,
+      "rango_p05": 457,
+      "rango_p50": 497,
+      "rango_p95": 515,
+      "lectura": "no alta"
+    },
+    "Z511": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 517,
+      "rango_p05": 509,
+      "rango_p50": 521,
+      "rango_p95": 533,
+      "lectura": "no alta"
+    },
+    "Z512": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 515,
+      "rango_p05": 502,
+      "rango_p50": 518,
+      "rango_p95": 539,
+      "lectura": "no alta"
+    },
+    "Z513": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 513,
+      "rango_p05": 506,
+      "rango_p50": 515,
+      "rango_p95": 523,
+      "lectura": "no alta"
+    },
+    "Z514": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 516,
+      "rango_p05": 507,
+      "rango_p50": 518,
+      "rango_p95": 527,
+      "lectura": "no alta"
+    },
+    "Z515": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 512,
+      "rango_p05": 505,
+      "rango_p50": 512,
+      "rango_p95": 520,
+      "lectura": "no alta"
+    },
+    "Z516": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 519,
+      "rango_p05": 508,
+      "rango_p50": 524,
+      "rango_p95": 543,
+      "lectura": "no alta"
+    },
+    "Z517": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 526,
+      "rango_p05": 414,
+      "rango_p50": 528,
+      "rango_p95": 545,
+      "lectura": "no alta"
+    },
+    "Z518": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 524,
+      "rango_p05": 516,
+      "rango_p50": 522,
+      "rango_p95": 530,
+      "lectura": "no alta"
+    },
+    "Z519": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 531,
+      "rango_p05": 516,
+      "rango_p50": 532,
+      "rango_p95": 543,
+      "lectura": "no alta"
+    },
+    "Z520": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 518,
+      "rango_p05": 446,
+      "rango_p50": 515,
+      "rango_p95": 533,
+      "lectura": "no alta"
+    },
+    "Z521": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 514,
+      "rango_p05": 310,
+      "rango_p50": 513,
+      "rango_p95": 549,
+      "lectura": "no alta"
+    },
+    "Z522": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 525,
+      "rango_p05": 504,
+      "rango_p50": 521,
+      "rango_p95": 530,
+      "lectura": "no alta"
+    },
+    "Z523": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 521,
+      "rango_p05": 441,
+      "rango_p50": 519,
+      "rango_p95": 539,
+      "lectura": "no alta"
+    },
+    "Z524": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 520,
+      "rango_p05": 514,
+      "rango_p50": 523,
+      "rango_p95": 531,
+      "lectura": "no alta"
+    },
+    "Z525": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 527,
+      "rango_p05": 483,
+      "rango_p50": 522,
+      "rango_p95": 535,
+      "lectura": "no alta"
+    },
+    "Z526": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 528,
+      "rango_p05": 416,
+      "rango_p50": 527,
+      "rango_p95": 541,
+      "lectura": "no alta"
+    },
+    "Z527": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 507,
+      "rango_p05": 370,
+      "rango_p50": 496,
+      "rango_p95": 526,
+      "lectura": "no alta"
+    },
+    "Z528": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 522,
+      "rango_p05": 424,
+      "rango_p50": 518,
+      "rango_p95": 541,
+      "lectura": "no alta"
+    },
+    "Z529": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 523,
+      "rango_p05": 369,
+      "rango_p50": 515,
+      "rango_p95": 550,
+      "lectura": "no alta"
+    },
+    "Z530": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 529,
+      "rango_p05": 513,
+      "rango_p50": 531,
+      "rango_p95": 557,
+      "lectura": "no alta"
+    },
+    "Z531": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 530,
+      "rango_p05": 516,
+      "rango_p50": 530,
+      "rango_p95": 544,
+      "lectura": "no alta"
+    },
+    "Z532": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 540,
+      "rango_p05": 514,
+      "rango_p50": 536,
+      "rango_p95": 549,
+      "lectura": "no alta"
+    },
+    "Z533": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 533,
+      "rango_p05": 513,
+      "rango_p50": 527,
+      "rango_p95": 538,
+      "lectura": "no alta"
+    },
+    "Z534": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 538,
+      "rango_p05": 528,
+      "rango_p50": 537,
+      "rango_p95": 546,
+      "lectura": "no alta"
+    },
+    "Z535": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 537,
+      "rango_p05": 531,
+      "rango_p50": 536,
+      "rango_p95": 543,
+      "lectura": "no alta"
+    },
+    "Z536": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 532,
+      "rango_p05": 521,
+      "rango_p50": 528,
+      "rango_p95": 536,
+      "lectura": "no alta"
+    },
+    "Z537": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 536,
+      "rango_p05": 520,
+      "rango_p50": 538,
+      "rango_p95": 553,
+      "lectura": "no alta"
+    },
+    "Z538": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 543,
+      "rango_p05": 532,
+      "rango_p50": 543,
+      "rango_p95": 547,
+      "lectura": "no alta"
+    },
+    "Z539": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 541,
+      "rango_p05": 530,
+      "rango_p50": 539,
+      "rango_p95": 546,
+      "lectura": "no alta"
+    },
+    "Z540": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 539,
+      "rango_p05": 523,
+      "rango_p50": 541,
+      "rango_p95": 556,
+      "lectura": "no alta"
+    },
+    "Z541": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 549,
+      "rango_p05": 544,
+      "rango_p50": 548,
+      "rango_p95": 554,
+      "lectura": "no alta"
+    },
+    "Z542": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 535,
+      "rango_p05": 499,
+      "rango_p50": 531,
+      "rango_p95": 546,
+      "lectura": "no alta"
+    },
+    "Z543": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 544,
+      "rango_p05": 532,
+      "rango_p50": 546,
+      "rango_p95": 558,
+      "lectura": "no alta"
+    },
+    "Z544": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 534,
+      "rango_p05": 365,
+      "rango_p50": 540,
+      "rango_p95": 561,
+      "lectura": "no alta"
+    },
+    "Z545": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 561,
+      "rango_p05": 552,
+      "rango_p50": 560,
+      "rango_p95": 562,
+      "lectura": "no alta"
+    },
+    "Z546": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 548,
+      "rango_p05": 539,
+      "rango_p50": 552,
+      "rango_p95": 560,
+      "lectura": "no alta"
+    },
+    "Z547": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 545,
+      "rango_p05": 539,
+      "rango_p50": 548,
+      "rango_p95": 554,
+      "lectura": "no alta"
+    },
+    "Z548": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 552,
+      "rango_p05": 546,
+      "rango_p50": 551,
+      "rango_p95": 556,
+      "lectura": "no alta"
+    },
+    "Z549": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 545,
+      "rango_p05": 540,
+      "rango_p50": 549,
+      "rango_p95": 555,
+      "lectura": "no alta"
+    },
+    "Z550": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 541,
+      "rango_p05": 531,
+      "rango_p50": 540,
+      "rango_p95": 547,
+      "lectura": "no alta"
+    },
+    "Z551": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 551,
+      "rango_p05": 516,
+      "rango_p50": 548,
+      "rango_p95": 557,
+      "lectura": "no alta"
+    },
+    "Z552": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 553,
+      "rango_p05": 518,
+      "rango_p50": 549,
+      "rango_p95": 561,
+      "lectura": "no alta"
+    },
+    "Z553": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 550,
+      "rango_p05": 518,
+      "rango_p50": 546,
+      "rango_p95": 557,
+      "lectura": "no alta"
+    },
+    "Z554": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 547,
+      "rango_p05": 532,
+      "rango_p50": 546,
+      "rango_p95": 554,
+      "lectura": "no alta"
+    },
+    "Z555": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 556,
+      "rango_p05": 501,
+      "rango_p50": 556,
+      "rango_p95": 563,
+      "lectura": "no alta"
+    },
+    "Z556": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 558,
+      "rango_p05": 547,
+      "rango_p50": 557,
+      "rango_p95": 561,
+      "lectura": "no alta"
+    },
+    "Z557": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 555,
+      "rango_p05": 528,
+      "rango_p50": 551,
+      "rango_p95": 558,
+      "lectura": "no alta"
+    },
+    "Z558": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 559,
+      "rango_p05": 547,
+      "rango_p50": 558,
+      "rango_p95": 561,
+      "lectura": "no alta"
+    },
+    "Z559": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 557,
+      "rango_p05": 550,
+      "rango_p50": 559,
+      "rango_p95": 562,
+      "lectura": "no alta"
+    },
+    "Z560": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 562,
+      "rango_p05": 551,
+      "rango_p50": 561,
+      "rango_p95": 563,
+      "lectura": "no alta"
+    },
+    "Z561": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 554,
+      "rango_p05": 505,
+      "rango_p50": 552,
+      "rango_p95": 560,
+      "lectura": "no alta"
+    },
+    "Z562": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 560,
+      "rango_p05": 545,
+      "rango_p50": 558,
+      "rango_p95": 562,
+      "lectura": "no alta"
+    },
+    "Z563": {
+      "robustez_pct": 0.0,
+      "alta_en_base": false,
+      "prioridad_exportada": "baja",
+      "rango_base": 563,
+      "rango_p05": 559,
+      "rango_p50": 563,
+      "rango_p95": 563,
+      "lectura": "no alta"
+    }
+  }
+}
