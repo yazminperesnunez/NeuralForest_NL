@@ -1,0 +1,11 @@
+# Solo se publica web/ (sitio estático). Lo demás no se sube a Vercel.
+.env
+.env.*
+server/
+scripts/
+grok/
+gee/
+pitch/
+docs/
+aire-zmm/
+mejoras_ui.md
