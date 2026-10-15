@@ -13,3 +13,4 @@ aire-zmm/
 
 # GeoPackages de origen: el derivado vive en web/data/districts.geojson
 *.gpkg
+.vercel
