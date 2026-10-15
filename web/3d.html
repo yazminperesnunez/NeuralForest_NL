@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeuralForest NL · Vista 3D</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="3d.css">
+</head>
+<body>
+<div id="map"></div>
+
+<header class="bar">
+  <div class="titles">
+    <h1>NeuralForest NL · Vista 3D</h1>
+    <p>Prioridad de infiltración en partes altas</p>
+  </div>
+  <a class="btn" href="index.html">Ver en 2D</a>
+</header>
+
+<section class="panel" aria-label="Controles">
+  <div class="group" role="group" aria-label="Mapa base">
+    <label><input type="radio" name="base" value="sat" checked> Satélite</label>
+    <label><input type="radio" name="base" value="gray"> Gris</label>
+  </div>
+  <div class="group" role="group" aria-label="Filtro de prioridad">
+    <label><i class="dot alta"></i><input type="checkbox" data-p="alta" checked> Alta</label>
+    <label><i class="dot media"></i><input type="checkbox" data-p="media" checked> Media</label>
+    <label><i class="dot baja"></i><input type="checkbox" data-p="baja" checked> Baja</label>
+    <span class="dam-key"><i class="dam"></i> Presa</span>
+  </div>
+</section>
+
+<footer class="note">Ojo: el índice compara potencial relativo; no mide volumen de agua infiltrada.</footer>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="3d.js"></script>
+</body>
+</html>
