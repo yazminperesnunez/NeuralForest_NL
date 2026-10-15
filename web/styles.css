@@ -116,3 +116,14 @@ body.doc { height:auto; min-height:100%; display:block; background:var(--bg); }
 .tabla tr:last-child td { border-bottom:0; }
 .fuentes { padding-left:18px; }
 .fuentes li { margin-bottom:4px; overflow-wrap:anywhere; }
+
+/* ---- navegación entre zonas ---- */
+.zone-nav { display:grid; grid-template-columns:auto minmax(0,1fr) auto auto; gap:6px; align-items:center; margin-bottom:10px; }
+.zone-nav button { padding:6px 8px; font-size:.82rem; white-space:nowrap; }
+.zone-nav button:disabled { opacity:.4; cursor:not-allowed; }
+.zone-nav .back { margin:0; }
+.nav-pos { text-align:center; font-size:.8rem; font-weight:600; color:var(--muted); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.zone-list li.sk { cursor:default; }
+.zone-list li.sk span { color:transparent; background:var(--line); border-radius:4px; animation:sk 1.2s ease-in-out infinite; }
+.zone-list li.sk .pill-row { background:none; }
+@keyframes sk { 50% { opacity:.5; } }

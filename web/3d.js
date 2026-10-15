@@ -136,8 +136,20 @@ function startMap(fc) {
     wireInteraction();
     wireControls();
     map.fitBounds(boundsOf(fc), { padding: 40, duration: 0 });
-    map.easeTo({ pitch: 60, bearing: -25, duration: 2500 });
+    if (!focusHashZone(fc)) map.easeTo({ pitch: 60, bearing: -25, duration: 2500 });
   });
+}
+
+// Vuela a la zona del hash (#Z003) y abre su popup. Un hash inválido se ignora.
+function focusHashZone(fc) {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const f = fc.features.find(z => z.properties && z.properties.id === id);
+  if (!f) return false;
+  const center = boundsOf({ features: [f] }).getCenter();
+  document.getElementById('link-2d').href = 'index.html#' + id;
+  map.flyTo({ center, zoom: 12, pitch: 60, bearing: -25, duration: 1500 });
+  new maplibregl.Popup({ maxWidth: '260px' }).setLngLat(center).setHTML(popupHtml(f.properties)).addTo(map);
+  return true;
 }
 
 async function init() {

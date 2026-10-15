@@ -191,7 +191,7 @@ function refreshVisibility() {
     toggle(zoneGroup, state.layers[id], vis);
     if (state.markers[id]) toggle(markerGroup, state.markers[id], vis && showMarkers);
   });
-  if (!state.selected) renderList();
+  if (!state.selected) renderList(); else renderNav();
 }
 
 function setupFilters() {
@@ -202,9 +202,20 @@ function setupFilters() {
 }
 
 // ---------- panel: lista ----------
+// Única fuente del orden del ranking. `todas` ignora los filtros (lo usa el CSV).
+function zonasOrdenadas(todas) {
+  const props = state.zones.map(f => f.properties);
+  return (todas ? props : props.filter(isVisible)).sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+}
+
+function skeletonList() {
+  const row = `<li class="sk"><span class="id">Z000</span><span class="basin">&nbsp;</span>
+    <span class="score">0.00</span><span class="pill-row"><span class="badge na">n/d</span></span></li>`;
+  panel.innerHTML = `<h2>Zonas prioritarias</h2><p class="count">Cargando zonas…</p><ul class="zone-list">${row.repeat(3)}</ul>`;
+}
+
 function renderList() {
-  const all = state.zones.map(f => f.properties).filter(isVisible)
-    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+  const all = zonasOrdenadas();
   const items = all.slice(0, LIST_LIMIT);
   const rows = items.map(p => `
     <li tabindex="0" data-id="${esc(p.id)}">
@@ -223,13 +234,82 @@ function renderList() {
 }
 
 // ---------- panel: detalle ----------
-function selectZone(id, fly) {
+// `inicial`: la selección viene del hash al cargar; no se hace scroll para que la primera pantalla no salte.
+function selectZone(id, fly, inicial) {
   const f = state.zones.find(z => z.properties.id === id);
   if (!f) return;
   state.selected = id;
+  // Se fija state.selected antes del hash: el listener de hashchange ve la misma zona y no hace nada.
+  if (location.hash.slice(1) !== id) location.hash = id;
+  update3dLink();
   if (fly) flyTo(state.layers[id]);
   renderDetail(f.properties);
   panel.scrollTop = 0;
+  if (!inicial && window.innerWidth < 800) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function backToList() {
+  state.selected = null;
+  history.replaceState(null, '', location.pathname + location.search);
+  update3dLink();
+  renderList();
+}
+
+function update3dLink() {
+  const a = document.getElementById('link-3d');
+  if (a) a.href = '3d.html' + (state.selected ? '#' + state.selected : '');
+}
+
+function applyHash(inicial) {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (state.zones.some(z => z.properties.id === id)) {
+    if (state.selected !== id) selectZone(id, true, inicial);
+  } else if (state.selected) {
+    backToList();
+  }
+}
+
+// Vecinas en el ranking. Dentro del top de la lista se navega solo dentro de ese top;
+// fuera de él, por la lista visible completa.
+function vecinas(id) {
+  const todas = zonasOrdenadas();
+  const i = todas.findIndex(p => p.id === id);
+  if (i === -1) return { pos: -1, prev: null, next: null };
+  const dentro = i < LIST_LIMIT;
+  const fin = dentro ? Math.min(LIST_LIMIT, todas.length) : todas.length;
+  return { pos: dentro ? i + 1 : 0, total: fin, prev: todas[i - 1] || null, next: i + 1 < fin ? todas[i + 1] : null };
+}
+
+function navHtml(id) {
+  const v = vecinas(id);
+  const centro = v.pos > 0 ? `${esc(id)} · ${v.pos} de ${v.total}`
+    : `${esc(id)} · ${v.pos === 0 ? 'fuera del top ' + LIST_LIMIT : 'fuera del filtro'}`;
+  return `<button class="back" id="back">← Lista</button>
+    <span class="nav-pos">${centro}</span>
+    <button id="prev" ${v.prev ? '' : 'disabled'}>‹ anterior</button>
+    <button id="next" ${v.next ? '' : 'disabled'}>siguiente ›</button>`;
+}
+
+function renderNav() {
+  const nav = document.getElementById('zone-nav');
+  if (!nav || !state.selected) return;
+  nav.innerHTML = navHtml(state.selected);
+  const v = vecinas(state.selected);
+  document.getElementById('back').addEventListener('click', backToList);
+  document.getElementById('prev').addEventListener('click', () => v.prev && selectZone(v.prev.id, true));
+  document.getElementById('next').addEventListener('click', () => v.next && selectZone(v.next.id, true));
+}
+
+function setupKeys() {
+  document.addEventListener('keydown', e => {
+    if (!state.selected || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.target.matches && e.target.matches('input, select, textarea')) return;
+    if (e.key === 'Escape') { backToList(); return; }
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const v = vecinas(state.selected);
+    const destino = e.key === 'ArrowRight' ? v.next : v.prev;
+    if (destino) { e.preventDefault(); selectZone(destino.id, true); }
+  });
 }
 
 function flyTo(layer) {
@@ -240,12 +320,12 @@ function flyTo(layer) {
 function renderDetail(p) {
   const rows = ATTRS.map(([k, label, unit]) => `<dt>${label}</dt><dd>${k === 'score' ? scoreText(p) : fmt(p[k], unit)}</dd>`).join('');
   panel.innerHTML = `
-    <button class="back" id="back">← Volver a la lista</button>
+    <nav class="zone-nav" id="zone-nav" aria-label="Navegar entre zonas"></nav>
     <h2>Zona ${esc(p.id)} ${badge(p)}</h2>
     <dl class="attrs">${rows}</dl>
     <h2>Recomendación de obra</h2>
     <div id="reco"></div>`;
-  document.getElementById('back').addEventListener('click', () => { state.selected = null; renderList(); });
+  renderNav();
   renderReco(p);
 }
 
@@ -382,9 +462,7 @@ function csvCell(v) {
 
 function carteraCsv() {
   const encabezado = CSV_COLS.concat(CSV_RECO_COLS).map(([, label]) => label);
-  const filas = state.zones.map(f => f.properties)
-    .slice()
-    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1))
+  const filas = zonasOrdenadas(true)
     .map(p => {
       const r = recoFor(p.id) || {};
       return CSV_COLS.map(([k]) => csvCell(p[k]))
@@ -424,6 +502,9 @@ function showBanner(fc) {
 // ---------- arranque ----------
 async function init() {
   buildMap();
+  skeletonList();
+  setupKeys();
+  window.addEventListener('hashchange', () => applyHash(false));
   state.dams = await loadJson(DAMS_URL, true);
   addDams();
   setupFilters();
@@ -436,6 +517,7 @@ async function init() {
     addZones();
     renderList();
     showBanner(fc);
+    applyHash(true);
   } catch (e) {
     panel.innerHTML = `<div class="error">No se pudieron cargar las zonas (data/zones.geojson). ${esc(e.message)}</div>`;
   }
