@@ -1,7 +1,8 @@
 // Base de la API; '' = mismo origen (/api/recommend). Cambiar si el servidor vive en otro host.
 const API_BASE = '';
 
-const COLORS = { alta: '#d7301f', media: '#f0a020', baja: '#f6e58d' };
+const COLORS = { alta: '#d7301f', media: '#f28c28', baja: '#f2d600' };
+const STROKES = { alta: '#8f1d12', media: '#a85a0a', baja: '#9a8500' };
 const DAMS = [
   { name: 'Presa Cerro Prieto', lat: 24.9297, lng: -99.4041 },
   { name: 'Presa La Boca', lat: 25.4300, lng: -100.1280 },
@@ -60,7 +61,7 @@ function normalize(fc) {
 
 // ---------- mapa ----------
 function styleFor(p, hover) {
-  return { color: hover ? '#222' : '#7a2a1e', weight: hover ? 3 : 2, fillColor: colorOf(p), fillOpacity: hover ? 0.75 : 0.55 };
+  return { color: hover ? '#222' : (STROKES[p.priority] || '#555'), weight: hover ? 2.5 : 1, fillColor: colorOf(p), fillOpacity: hover ? 0.85 : 0.7 };
 }
 
 function makeLayer(feature) {
@@ -93,15 +94,25 @@ function bindZoneEvents(layer, p) {
 function buildMap() {
   map = L.map('map', { preferCanvas: true });
   const bases = {
+    gris: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 18, maxNativeZoom: 16, attribution: 'Tiles &copy; Esri — Esri, HERE, Garmin, &copy; OpenStreetMap contributors' }),
     topo: L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
       maxZoom: 17, attribution: 'Datos &copy; OpenStreetMap, SRTM | Estilo &copy; <a href="https://opentopomap.org">OpenTopoMap</a>' }),
     sat: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 18, attribution: 'Tiles &copy; Esri — Maxar, Earthstar Geographics, GIS User Community' }),
   };
-  let current = bases.topo.addTo(map);
+  // Etiquetas encima de los polígonos (canvas en overlayPane, zIndex 400) para que los nombres sigan legibles.
+  map.createPane('labels');
+  map.getPane('labels').style.zIndex = 450;
+  map.getPane('labels').style.pointerEvents = 'none';
+  const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    pane: 'labels', maxZoom: 18, maxNativeZoom: 16 });
+  let current = bases.gris.addTo(map);
+  labels.addTo(map);
   document.querySelectorAll('#basemaps input').forEach(inp => inp.addEventListener('change', () => {
     map.removeLayer(current);
     current = bases[inp.value].addTo(map);
+    if (inp.value === 'gris') labels.addTo(map); else map.removeLayer(labels);
   }));
   zoneGroup = L.layerGroup().addTo(map);
   markerGroup = L.layerGroup().addTo(map);
