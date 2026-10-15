@@ -19,7 +19,13 @@
       <li><strong>&lt; 5 %</strong><span>Cerro Prieto y La Boca en lo más crítico de 2022</span></li>
       <li><strong>13,500 vs 16,500 l/s</strong><span>disponible vs consumo regular (2022)</span></li>
     </ul>
+    <div class="actions">
+      <a class="btn-link" href="metodologia.html">Metodología y fuentes</a>
+      <button id="csv" type="button">Descargar cartera (CSV)</button>
+    </div>
   </header>
+
+  <div id="banner" class="banner" hidden></div>
 
   <main class="layout">
     <section class="map-wrap">
@@ -35,6 +41,9 @@
           <label><input type="checkbox" value="media" checked> Media</label>
           <label><input type="checkbox" value="baja" checked> Baja</label>
         </div>
+        <div class="ctl-group" id="context">
+          <label><input type="checkbox" id="toggle-districts"> Distritos de riego</label>
+        </div>
       </div>
       <div class="legend">
         <b>Prioridad</b>
@@ -42,6 +51,7 @@
         <span><i style="background:#f28c28"></i>Media</span>
         <span><i style="background:#f2d600"></i>Baja</span>
         <span><i class="dam"></i>Presa</span>
+        <span><i class="distrito"></i>Distrito de riego</span>
       </div>
     </section>
 

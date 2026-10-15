@@ -3,21 +3,128 @@
     "zone_id": "Z01",
     "work": "barreras de piedra acomodada",
     "why": "Pendiente moderada (18.5 %) con cobertura vegetal muy baja (NDVI 0.21) y 2 años con incendio: el suelo expuesto genera escurrimiento rápido. Las barreras de piedra en curvas de nivel frenan el agua, retienen sedimento y dan tiempo a que se infiltre.",
-    "alternatives": ["zanjas trinchera", "reforestación con especies nativas"],
+    "alternatives": [
+      "zanjas trinchera",
+      "reforestación con especies nativas"
+    ],
     "caveats": "Requiere piedra disponible en sitio y mantenimiento después de las primeras lluvias fuertes. Sin protección contra ganado, la vegetación no se recupera."
+  },
+  "Z02": {
+    "zone_id": "Z02",
+    "source": "reglas",
+    "work": "barreras de material vegetal muerto",
+    "why": "Zona Z02 (pendiente 22.0 %, NDVI 0.24, arena 40 %, 3 años con incendio, 2100 m s.n.m.). Se sugiere barreras de material vegetal muerto porque hay material quemado disponible (3 años con incendio) y la pendiente de 22.0 % exige una obra ligera que no remueva suelo.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "zanjas trinchera"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
+  },
+  "Z03": {
+    "zone_id": "Z03",
+    "source": "reglas",
+    "work": "zanjas trinchera",
+    "why": "Zona Z03 (pendiente 15.2 %, NDVI 0.27, arena 52 %, 1 años con incendio, 1650 m s.n.m.). Se sugiere zanjas trinchera porque suelo arenoso (52 % de arena) y pendiente baja (15.2 %): la zanja capta el escurrimiento y lo infiltra en profundidad.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "barreras de material vegetal muerto"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
   },
   "Z04": {
     "zone_id": "Z04",
     "work": "zanjas trinchera",
     "why": "Pendiente baja (12.8 %), suelo arenoso (58 %) y NDVI muy bajo (0.19). En suelos arenosos con poca pendiente las zanjas trinchera captan el escurrimiento y favorecen la infiltración profunda.",
-    "alternatives": ["exclusión de ganado", "reforestación con especies nativas"],
+    "alternatives": [
+      "exclusión de ganado",
+      "reforestación con especies nativas"
+    ],
     "caveats": "En suelo arenoso las paredes de la zanja pueden colapsar; conviene reforzarlas con vegetación. Validar en campo la profundidad del suelo."
+  },
+  "Z05": {
+    "zone_id": "Z05",
+    "source": "reglas",
+    "work": "barreras de material vegetal muerto",
+    "why": "Zona Z05 (pendiente 28.4 %, NDVI 0.38, arena 35 %, 1 años con incendio, 2450 m s.n.m.). Se sugiere barreras de material vegetal muerto porque ninguna regla aplica con claridad; es una obra ligera y reversible mientras se valida en campo.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "zanjas trinchera"
+    ],
+    "caveats": "Recomendación por defecto: ninguna regla aplicó con claridad (confianza baja), no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
   },
   "Z06": {
     "zone_id": "Z06",
     "work": "barreras de material vegetal muerto",
     "why": "Prioridad media con pendiente de 20.1 % y NDVI de 0.41. Hay cobertura parcial, así que una obra ligera con ramas y troncos sirve para frenar el agua sin mover suelo.",
-    "alternatives": ["reforestación con especies nativas"],
+    "alternatives": [
+      "reforestación con especies nativas"
+    ],
     "caveats": "Las barreras de material vegetal se degradan en pocos años. Deben combinarse con revegetación para dar resultados duraderos."
+  },
+  "Z07": {
+    "zone_id": "Z07",
+    "source": "reglas",
+    "work": "zanjas trinchera",
+    "why": "Zona Z07 (pendiente 9.5 %, NDVI 0.33, arena 60 %, 1 años con incendio, 2050 m s.n.m.). Se sugiere zanjas trinchera porque suelo arenoso (60 % de arena) y pendiente baja (9.5 %): la zanja capta el escurrimiento y lo infiltra en profundidad.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "barreras de material vegetal muerto"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
+  },
+  "Z08": {
+    "zone_id": "Z08",
+    "source": "reglas",
+    "work": "barreras de material vegetal muerto",
+    "why": "Zona Z08 (pendiente 14.0 %, NDVI 0.36, arena 48 %, 0 años con incendio, 1250 m s.n.m.). Se sugiere barreras de material vegetal muerto porque ninguna regla aplica con claridad; es una obra ligera y reversible mientras se valida en campo.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "zanjas trinchera"
+    ],
+    "caveats": "Recomendación por defecto: ninguna regla aplicó con claridad (confianza baja), no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
+  },
+  "Z09": {
+    "zone_id": "Z09",
+    "source": "reglas",
+    "work": "conservar y monitorear",
+    "why": "Zona Z09 (pendiente 35.5 %, NDVI 0.62, arena 28 %, 0 años con incendio, 2900 m s.n.m.). Se sugiere conservar y monitorear porque la cobertura vegetal ya es alta (NDVI 0.62): conviene protegerla antes que intervenir.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "barreras de material vegetal muerto"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
+  },
+  "Z10": {
+    "zone_id": "Z10",
+    "source": "reglas",
+    "work": "conservar y monitorear",
+    "why": "Zona Z10 (pendiente 32.0 %, NDVI 0.58, arena 30 %, 0 años con incendio, 2600 m s.n.m.). Se sugiere conservar y monitorear porque la cobertura vegetal ya es alta (NDVI 0.58): conviene protegerla antes que intervenir.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "barreras de material vegetal muerto"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
+  },
+  "Z11": {
+    "zone_id": "Z11",
+    "source": "reglas",
+    "work": "conservar y monitorear",
+    "why": "Zona Z11 (pendiente 6.0 %, NDVI 0.55, arena 44 %, 0 años con incendio, 1700 m s.n.m.). Se sugiere conservar y monitorear porque la cobertura vegetal ya es alta (NDVI 0.55): conviene protegerla antes que intervenir.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "barreras de material vegetal muerto"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
+  },
+  "Z12": {
+    "zone_id": "Z12",
+    "source": "reglas",
+    "work": "conservar y monitorear",
+    "why": "Zona Z12 (pendiente 25.0 %, NDVI 0.51, arena 38 %, 0 años con incendio, 1400 m s.n.m.). Se sugiere conservar y monitorear porque la cobertura vegetal ya es alta (NDVI 0.51): conviene protegerla antes que intervenir.",
+    "alternatives": [
+      "barreras de piedra acomodada",
+      "barreras de material vegetal muerto"
+    ],
+    "caveats": "Recomendación generada por reglas, no por un especialista. Índice de potencial relativo. No mide volumen de agua infiltrada. Requiere validación en campo. Verificar en campo: disponibilidad de material, presencia de cárcavas, acceso, tenencia de la tierra y presencia de ganado."
   }
 }
