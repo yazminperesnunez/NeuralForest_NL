@@ -72,14 +72,17 @@
       <thead><tr><th>Si…</th><th>Obra</th></tr></thead>
       <tbody>
         <tr><td>NDVI ≥ 0.50</td><td>conservar y monitorear</td></tr>
-        <tr><td>2 o más años con incendio y pendiente ≥ 20 %</td><td>barreras de material vegetal muerto</td></tr>
-        <tr><td>Pendiente ≥ 25 % y NDVI &lt; 0.35</td><td>barreras de piedra acomodada</td></tr>
-        <tr><td>Arena ≥ 50 % y pendiente &lt; 20 %</td><td>zanjas trinchera</td></tr>
-        <tr><td>NDVI &lt; 0.35 y pendiente &lt; 20 %</td><td>reforestación con especies nativas</td></tr>
+        <tr><td>1 o más años con incendio y pendiente ≥ 20 %</td><td>barreras de material vegetal muerto</td></tr>
+        <tr><td>Pendiente ≥ 45 %</td><td>reforestación con especies nativas</td></tr>
+        <tr><td>Pendiente ≥ 25 %</td><td>barreras de piedra acomodada</td></tr>
+        <tr><td>Pendiente ≥ 20 %</td><td>barreras de material vegetal muerto</td></tr>
+        <tr><td>Arena ≥ 40 %</td><td>zanjas trinchera</td></tr>
+        <tr><td>NDVI &lt; 0.35</td><td>reforestación con especies nativas</td></tr>
+        <tr><td>En otro caso</td><td>zanjas trinchera</td></tr>
       </tbody>
     </table>
-    <p>Si ninguna regla aplica con claridad, decide el modelo (Grok) y lo dice en las salvedades de
-      la ficha. Las recomendaciones se pre-generan con
+    <p>Las reglas se aplican en este orden y gana la primera que se cumple. Los umbrales se calibraron
+      con la distribución del export real de GEE (14 oct 2026). Las recomendaciones se pre-generan con
       <code>scripts/generar_recomendaciones.py</code> para que el demo no dependa de la red; el
       botón del panel consulta a Grok en vivo cuando el servidor está arriba.</p>
 

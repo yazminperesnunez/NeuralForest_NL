@@ -27,16 +27,18 @@ LLM_MODEL = os.environ.get("LLM_MODEL", "")
 LLM_TIMEOUT_S = float(os.environ.get("LLM_TIMEOUT_S", "60"))
 
 # ---------------------------------------------------------------------------
-# Reglas de tipo de obra. UMBRALES PROVISIONALES: validar con Pronatura.
+# Reglas de tipo de obra. Umbrales calibrados a la distribucion del export
+# real de GEE (14 oct 2026); son PROVISIONALES hasta que Pronatura los valide.
 # slope_pct viene en porcentaje (no en grados): 12 grados = 21 %, 15 = 27 %.
 # ---------------------------------------------------------------------------
 REGLAS = {
-    "pendiente_fuerte_pct": 25,     # arriba de esto, obra de piedra
-    "pendiente_media_pct": 20,      # umbral para obras transversales
-    "ndvi_desnudo": 0.35,           # debajo: cobertura muy baja
-    "ndvi_conservado": 0.50,        # arriba: conviene conservar, no intervenir
-    "arena_alta_pct": 50,           # suelo arenoso: infiltra, pero la zanja se colapsa
-    "incendios_recurrentes": 2,     # anios con incendio en la serie de MODIS
+    "pendiente_media_pct": 20,       # desde aqui, obra transversal ligera
+    "pendiente_fuerte_pct": 25,      # desde aqui, obra firme de piedra
+    "pendiente_muy_fuerte_pct": 45,  # desde aqui, obra pesada no es segura
+    "ndvi_desnudo": 0.35,            # debajo: cobertura muy baja
+    "ndvi_conservado": 0.50,         # desde aqui: conviene conservar
+    "arena_alta_pct": 40,            # suelo relativamente arenoso
+    "incendios_con_material": 1,     # anios con incendio en la serie de MODIS
 }
 
 OBRAS = [
@@ -73,29 +75,44 @@ def obra_por_reglas(zona):
         return ("conservar y monitorear",
                 "la cobertura vegetal ya es alta (NDVI %.2f): conviene protegerla antes que intervenir" % ndvi,
                 True)
-    if incendios >= REGLAS["incendios_recurrentes"] and pendiente >= REGLAS["pendiente_media_pct"]:
+    if incendios >= REGLAS["incendios_con_material"] and pendiente >= REGLAS["pendiente_media_pct"]:
         return ("barreras de material vegetal muerto",
                 "hay material quemado disponible (%g años con incendio) y la pendiente de %.1f %% exige una obra ligera que no remueva suelo"
                 % (incendios, pendiente),
                 True)
-    if pendiente >= REGLAS["pendiente_fuerte_pct"] and ndvi < REGLAS["ndvi_desnudo"]:
+    if pendiente >= REGLAS["pendiente_muy_fuerte_pct"]:
+        return ("reforestación con especies nativas",
+                "pendiente muy fuerte (%.1f %%): las obras pesadas no son seguras y la vegetación hace el trabajo"
+                % pendiente,
+                True)
+    if pendiente >= REGLAS["pendiente_fuerte_pct"]:
         return ("barreras de piedra acomodada",
-                "pendiente fuerte (%.1f %%) con suelo descubierto (NDVI %.2f): se necesita una obra firme que resista el escurrimiento"
+                "pendiente fuerte (%.1f %%): se necesita una obra firme que resista el escurrimiento"
+                % pendiente,
+                True)
+    if pendiente >= REGLAS["pendiente_media_pct"]:
+        return ("barreras de material vegetal muerto",
+                "pendiente media (%.1f %%): una obra transversal ligera frena el escurrimiento sin remover suelo"
+                % pendiente,
+                True)
+    if arena >= REGLAS["arena_alta_pct"]:
+        return ("zanjas trinchera",
+                "pendiente suave (%.1f %%) y suelo relativamente arenoso (%.0f %% de arena): la zanja capta el escurrimiento y lo infiltra"
+                % (pendiente, arena),
+                True)
+    if ndvi < REGLAS["ndvi_desnudo"]:
+        return ("reforestación con especies nativas",
+                "pendiente suave (%.1f %%) y poca cobertura (NDVI %.2f): la raíz y la hojarasca hacen el trabajo"
                 % (pendiente, ndvi),
                 True)
-    if arena >= REGLAS["arena_alta_pct"] and pendiente < REGLAS["pendiente_media_pct"]:
-        return ("zanjas trinchera",
-                "suelo arenoso (%.0f %% de arena) y pendiente baja (%.1f %%): la zanja capta el escurrimiento y lo infiltra en profundidad"
-                % (arena, pendiente),
-                True)
-    if ndvi < REGLAS["ndvi_desnudo"] and pendiente < REGLAS["pendiente_media_pct"]:
-        return ("reforestación con especies nativas",
-                "poca cobertura (NDVI %.2f) en terreno de pendiente baja (%.1f %%): la raíz y la hojarasca hacen el trabajo"
-                % (ndvi, pendiente),
-                True)
-    return ("barreras de material vegetal muerto",
-            "ninguna regla aplica con claridad; es una obra ligera y reversible mientras se valida en campo",
-            False)
+    if not any(_num(zona, c) is not None for c in ("slope_pct", "ndvi")):
+        return ("barreras de material vegetal muerto",
+                "faltan datos de pendiente y NDVI; es una obra ligera y reversible mientras se valida en campo",
+                False)
+    return ("zanjas trinchera",
+            "pendiente suave (%.1f %%) y cobertura parcial (NDVI %.2f): la zanja capta el escurrimiento"
+            % (pendiente, ndvi),
+            True)
 
 
 def ficha_por_reglas(zona):
@@ -144,10 +161,14 @@ tenencia de la tierra, ganado) y el límite del índice.
 
 Reglas de decisión (umbrales provisionales; slope_pct está en porcentaje):
 - ndvi >= {ndvi_conservado}: conservar y monitorear.
-- burned_years >= {incendios_recurrentes} y slope_pct >= {pendiente_media_pct}: barreras de material vegetal muerto.
-- slope_pct >= {pendiente_fuerte_pct} y ndvi < {ndvi_desnudo}: barreras de piedra acomodada.
-- sand_pct >= {arena_alta_pct} y slope_pct < {pendiente_media_pct}: zanjas trinchera.
-- ndvi < {ndvi_desnudo} y slope_pct < {pendiente_media_pct}: reforestación con especies nativas.
+- burned_years >= {incendios_con_material} y slope_pct >= {pendiente_media_pct}: barreras de material vegetal muerto.
+- slope_pct >= {pendiente_muy_fuerte_pct}: reforestación con especies nativas (obras pesadas no son seguras).
+- slope_pct >= {pendiente_fuerte_pct}: barreras de piedra acomodada.
+- slope_pct >= {pendiente_media_pct}: barreras de material vegetal muerto.
+- sand_pct >= {arena_alta_pct}: zanjas trinchera.
+- ndvi < {ndvi_desnudo}: reforestación con especies nativas.
+- en otro caso: zanjas trinchera.
+Aplica las reglas en este orden y usa la primera que cumpla.
 
 Responde SOLO con un objeto JSON {{"Z01": {{...}}, ...}} donde cada valor tiene los campos: \
 zone_id, work, why, alternatives (lista de 1 a 2 obras), caveats. Sin texto adicional ni backticks."""
